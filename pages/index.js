@@ -1,5 +1,5 @@
 import Head from "next/head";
-
+import Filters from "../components/demo/Filters";
 export default function Home() {
   return (
     <div className="container">
@@ -11,6 +11,7 @@ export default function Home() {
 
       <main className="container">
         <p className="text-4xl text-blue-600">heading</p>
+        <Filters />
       </main>
     </div>
   );
