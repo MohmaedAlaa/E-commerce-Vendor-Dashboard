@@ -16,7 +16,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 const navigation = [
   { name: "Dashboard", href: "/", icon: HomeIcon, current: true },
-  { name: "products", href: "/products", icon: UsersIcon, current: false },
+  { name: "products", href: "/Products", icon: UsersIcon, current: false },
   // { name: "Projects", href: "#", icon: FolderIcon, current: false },
   // { name: "Calendar", href: "#", icon: CalendarIcon, current: false },
   // { name: "Documents", href: "#", icon: InboxIcon, current: false },
@@ -35,7 +35,6 @@ function classNames(...classes) {
 export default function Layout({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const router = useRouter();
-  console.log(router);
   return (
     <>
       {/*
