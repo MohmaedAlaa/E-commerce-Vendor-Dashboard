@@ -149,7 +149,7 @@ export default function Layout({ children }) {
             <div className="flex-shrink-0 px-4 flex items-center">
               <img className="h-8 w-auto" src="/logoLight.svg" alt="mytreety" />
             </div>
-            <div className="flex-grow mt-5 flex flex-col">
+            <div className="flex-grow mt-16 flex flex-col">
               <nav className="flex-1 px-2 pb-4 space-y-1">
                 {navigation.map((item) => (
                   <Link href={item.href} key={item.name}>
