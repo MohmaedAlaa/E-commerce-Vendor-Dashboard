@@ -16,7 +16,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 const navigation = [
   { name: "Dashboard", href: "/", icon: HomeIcon, current: true },
-  { name: "Products", href: "/Products", icon: UsersIcon, current: false },
+  { name: "Products", href: "/products", icon: UsersIcon, current: false },
   // { name: "Projects", href: "#", icon: FolderIcon, current: false },
   // { name: "Calendar", href: "#", icon: CalendarIcon, current: false },
   // { name: "Documents", href: "#", icon: InboxIcon, current: false },
