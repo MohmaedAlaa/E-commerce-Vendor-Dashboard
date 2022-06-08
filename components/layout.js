@@ -10,6 +10,7 @@ import {
   MenuAlt2Icon,
   UsersIcon,
   XIcon,
+  StarIcon,
 } from "@heroicons/react/outline";
 import { SearchIcon } from "@heroicons/react/solid";
 import Link from "next/link";
@@ -17,6 +18,9 @@ import { useRouter } from "next/router";
 const navigation = [
   { name: "Dashboard", href: "/", icon: HomeIcon, current: true },
   { name: "products", href: "/products", icon: UsersIcon, current: false },
+  { name: "Orders", href: "/orders", icon: StarIcon, current: false },
+  { name: "Product Reviews", href: "/productReviews", icon: StarIcon, current: false },
+  { name: "Commission History", href: "/commissionHistory", icon: StarIcon, current: false },
   // { name: "Projects", href: "#", icon: FolderIcon, current: false },
   // { name: "Calendar", href: "#", icon: CalendarIcon, current: false },
   // { name: "Documents", href: "#", icon: InboxIcon, current: false },
