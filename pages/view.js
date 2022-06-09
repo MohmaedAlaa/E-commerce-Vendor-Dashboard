@@ -14,13 +14,13 @@ const product = [
   // More product...
 ];
 
-export default function View({product}) {
+export default function View() {
     
   return (
 
     <div className="px-4 sm:px-6 lg:px-8">
 
-        {product?console.log(product):console.log('loading')}
+        {/* {product?console.log(product):console.log('loading')} */}
         <div className="flex flex-row">
             <a href={'/productReviews'} className='text-[#3D897A] hover:underline'>
                 Product Reviews
@@ -30,7 +30,7 @@ export default function View({product}) {
         </div>
 
         <div className="rounded-[14px] mt-5" style={{'box-shadow': '2px 2px 20px #8A97A940'}}>
-      
+            {product.map((product)=>(
               <div className="p-6">
               
                 <div className="flex row">
@@ -59,7 +59,7 @@ export default function View({product}) {
                   </div>
                 </div>
               </div>
-           
+            ))}
         </div>
        
     </div>

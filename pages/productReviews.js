@@ -153,7 +153,7 @@ export default function products() {
                           className="text-[#3D897A] hover:text-[#3D897A] hover:underline"
                         >
                           View<span className="sr-only">, {product.name}</span>
-                          <View product={product}/>
+                          {/* <View product={product}/> */}
                         </a>
                       </td>
                     </tr>
