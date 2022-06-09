@@ -165,8 +165,8 @@ const ProductsTable = ({ people }) => {
                       <span
                         className={`${
                           person.Status === "Active"
-                            ? "text-green-800  bg-green-100"
-                            : "text-[#c54949] bg-[#f384848d]"
+                            ? "text-[#3D897A]  bg-[#3D897A] bg-opacity-25"
+                            : "text-[#EE6363] bg-[#EE6363] bg-opacity-25"
                         } inline-flex rounded-full px-2 text-xs font-semibold leading-5 `}
                         // className={classNames(
                         //   person.Status ===

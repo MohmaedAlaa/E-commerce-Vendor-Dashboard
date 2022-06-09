@@ -50,7 +50,9 @@ export default function Select() {
                     key={person.id}
                     className={({ active }) =>
                       classNames(
-                        active ? "text-white bg-[#3d897a]" : "text-gray-900",
+                        active
+                          ? "text-gray-900 bg-[#3d897a] bg-opacity-25"
+                          : "text-gray-900",
                         "cursor-default select-none w-48 relative py-2 pl-3 pr-9"
                       )
                     }

@@ -24,6 +24,7 @@ const navigation = [
     current: false,
     children: [
       { name: "Products", href: "/products" },
+      { name: "Product Bulk Upload", href: "/ProductBulkUpload" },
       { name: "Table", href: "/Table" },
     ],
   },
@@ -262,7 +263,7 @@ export default function Layout({ children }) {
 
         <div className="md:pl-64">
           <div className="max-w-7xl mx-auto flex flex-col md:px-8 xl:px-0">
-            <div className="sticky top-0 z-10 flex-shrink-0 h-16 bg-white border-b border-gray-200 flex">
+            <div className="sticky top-0 z-10 flex-shrink-0 h-16 bg-[#F2F4F7] border-b border-gray-200 flex">
               <button
                 type="button"
                 className="border-r border-gray-200 px-4 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 md:hidden"
@@ -283,7 +284,7 @@ export default function Layout({ children }) {
                       </div>
                       <input
                         id="search-field"
-                        className="block h-full w-full border-transparent py-2 pl-8 pr-3 text-gray-900 placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-0 focus:border-transparent sm:text-sm"
+                        className="block bg-[#F2F4F7] h-full w-full border-transparent py-2 pl-8 pr-3 text-gray-900 placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-0 focus:border-transparent sm:text-sm"
                         placeholder="Search"
                         type="search"
                         name="search"
@@ -345,8 +346,10 @@ export default function Layout({ children }) {
             </div>
 
             <main className="flex-1">
-              <div className="py-6">
-                <div className="px-4 sm:px-6 md:px-0">{children}</div>
+              <div className="pb-6">
+                <div className="px-4  sm:px-6 md:px-0 bg-[#F2F4F7]">
+                  {children}
+                </div>
               </div>
             </main>
           </div>
