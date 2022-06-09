@@ -58,7 +58,7 @@ const UploadFiles = () => {
           </ul>
         </div>
       </div>
-      <div className="flex  flex-col md:flex-row gap-8npm mt-8">
+      <div className="flex  flex-col md:flex-row gap-8  mt-8">
         <div className="bg-white shadow-md p-8 rounded-2xl w-[512px] max-w-lg">
           <div className="border-b pb-4 border-gray-300 my-4 flex justify-between ">
             <h3 className="text-lg font-medium">Upload XML Files</h3>

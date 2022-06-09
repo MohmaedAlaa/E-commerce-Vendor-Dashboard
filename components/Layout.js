@@ -261,7 +261,7 @@ export default function Layout({ children }) {
           </div>
         </div>
 
-        <div className="md:pl-64">
+        <div className="md:pl-64 bg-[#F2F4F7]">
           <div className="max-w-7xl mx-auto flex flex-col md:px-8 xl:px-0">
             <div className="sticky top-0 z-10 flex-shrink-0 h-16 bg-[#F2F4F7] border-b border-gray-200 flex">
               <button
@@ -347,7 +347,7 @@ export default function Layout({ children }) {
 
             <main className="flex-1">
               <div className="pb-6">
-                <div className="px-4  sm:px-6 md:px-0 bg-[#F2F4F7]">
+                <div className="px-4 h-screen sm:px-6 md:px-0 bg-[#F2F4F7]">
                   {children}
                 </div>
               </div>
