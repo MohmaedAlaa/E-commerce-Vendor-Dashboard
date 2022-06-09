@@ -11,7 +11,7 @@ const ProductsEmpty = () => {
         alt="empty product"
       />
       <h3 className="font-semibold text-lg mt-4">
-        You haven't uploaded any products yet!
+        You haven&apos;t uploaded any products yet!
       </h3>
       <p className="my-2 text-[#707082]">Start adding your products now!</p>
       <div className="mt-4">
