@@ -16,19 +16,19 @@
 */
 import { useLayoutEffect, useRef, useState } from "react";
 import SelectProductReviews from "../components/SelectProductReviews";
-
+import View from "./View";
 const product = [
   {
     product: "Polo Shirt",
-    Rate: "5",
-    Date: "23/5/2022-11:18 PM",
-    Review: "Great shirt! The size is perfect , The color is better than",
+    rate: "5",
+    date: "23/5/2022-11:18 PM",
+    review: "Great shirt! The size is perfect , The color is better than",
   },
   {
     product: "Polo Shirt",
-    Rate: "3",
-    Date: "25/5/2022-11:18 PM",
-    Review: "Great shirt! The size is perfect , The color is better than",
+    rate: "3",
+    date: "25/5/2022-11:18 PM",
+    review: "Great shirt! The size is perfect , The color is better than",
   },
   // More product...
 ];
@@ -138,21 +138,22 @@ export default function products() {
                       </td>
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                           <div className="flex flex-row space-x-1">
-                            <p>{product.Rate}</p><img src="/golden star.svg" alt="golden star"/>
+                            <p>{product.rate}</p><img src="/golden star.svg" alt="golden star"/>
                           </div>
                       </td>
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                        {product.Date}
+                        {product.date}
                       </td>
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                        <p  className='truncate w-80'>{product.Review}</p>
+                        <p  className='truncate w-80'>{product.review}</p>
                       </td>
                       <td className="whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                         <a
-                          href="#"
+                          href="/view"
                           className="text-[#3D897A] hover:text-[#3D897A] hover:underline"
                         >
                           View<span className="sr-only">, {product.name}</span>
+                          <View product={product}/>
                         </a>
                       </td>
                     </tr>

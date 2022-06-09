@@ -16,12 +16,21 @@
 */
 import { useLayoutEffect, useRef, useState } from "react";
 import Select from "../components/Select";
+import orderDetails from "./orderDetails";
 // import Example from "../components/SelectOrders";
 const product = [
   {
     code: "#123234ggd",
     no: "1",
     amount: "$ 30",
+    ShippingAddress:'Röpkestraße 35,Düsseldorf,40235,Germany',
+    orderDate:"23/5/2022-11:18 PM",
+    orderStatus:'pending',
+    paymentMethod:'Paypal',
+    variation:'XL.Blue',
+    SKU:'XLpoloshirt001',
+    quantity:'1',
+    status:'pending'
   },
   // More product...
 ];
@@ -152,7 +161,9 @@ export default function products() {
                       </td>
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500"
                       >
-                        {product.code}
+                        <a href="/orderDetails">{product.code}</a>
+                        <orderDetails product={product} />
+                        {console.log(product)}
                       </td>
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                         {product.no}
