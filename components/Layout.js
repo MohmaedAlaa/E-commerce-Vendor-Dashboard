@@ -1,5 +1,5 @@
 import { Fragment, useState } from "react";
-import { Dialog, Menu, Transition } from "@headlessui/react";
+import { Dialog, Disclosure, Menu, Transition } from "@headlessui/react";
 import {
   BellIcon,
   CalendarIcon,
@@ -14,14 +14,21 @@ import {
 import { SearchIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 import { useRouter } from "next/router";
+
 const navigation = [
   { name: "Dashboard", href: "/", icon: HomeIcon, current: true },
-  { name: "Products", href: "/products", icon: UsersIcon, current: false },
-  // { name: "Projects", href: "#", icon: FolderIcon, current: false },
-  // { name: "Calendar", href: "#", icon: CalendarIcon, current: false },
-  // { name: "Documents", href: "#", icon: InboxIcon, current: false },
-  // { name: "Reports", href: "#", icon: ChartBarIcon, current: false },
+  // { name: "Products", href: "/products", icon: UsersIcon, current: false },
+  {
+    name: "Products",
+    icon: FolderIcon,
+    current: false,
+    children: [
+      { name: "Products", href: "/products" },
+      { name: "Table", href: "/Table" },
+    ],
+  },
 ];
+
 const userNavigation = [
   { name: "Your Profile", href: "/" },
   { name: "Settings", href: "/" },
@@ -149,7 +156,7 @@ export default function Layout({ children }) {
               <img className="h-8 w-auto" src="/logoLight.svg" alt="mytreety" />
             </div>
             <div className="flex-grow mt-16 flex flex-col">
-              <nav className="flex-1 px-2 pb-4 space-y-1">
+              {/* <nav className="flex-1 px-2 pb-4 space-y-1">
                 {navigation.map((item) => (
                   <Link href={item.href} key={item.name}>
                     <a
@@ -173,6 +180,81 @@ export default function Layout({ children }) {
                     </a>
                   </Link>
                 ))}
+              </nav> */}
+
+              <nav className="flex-1 mt-8 px-2 space-y-1" aria-label="Sidebar">
+                {navigation.map((item) =>
+                  !item.children ? (
+                    <div key={item.name}>
+                      <Link href={item.href}>
+                        <a
+                          className={classNames(
+                            item.current
+                              ? " text-white hover:bg-[#d3eded54]"
+                              : " text-white hover:bg-[#d3eded54] ",
+                            "group w-full flex items-center pl-2 py-2 text-sm font-medium rounded-md"
+                          )}
+                        >
+                          <item.icon
+                            className={classNames(
+                              item.current ? "text-white" : "text-white ",
+                              "mr-3 flex-shrink-0 h-6 w-6"
+                            )}
+                            aria-hidden="true"
+                          />
+                          {item.name}
+                        </a>
+                      </Link>
+                    </div>
+                  ) : (
+                    <Disclosure as="div" key={item.name} className="space-y-1">
+                      {({ open }) => (
+                        <>
+                          <Disclosure.Button
+                            className={classNames(
+                              item.current
+                                ? "bg-transparent text-white"
+                                : "bg-transparent text-white hover:bg-[#d3eded54] bg-opacity-10 hover:text-white",
+                              "group w-full flex items-center pl-2 pr-1 py-2 text-left text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-[#3d897a]"
+                            )}
+                          >
+                            <item.icon
+                              className="mr-3 flex-shrink-0 h-6 w-6 text-white "
+                              aria-hidden="true"
+                            />
+                            <span className="flex-1">{item.name}</span>
+                            <svg
+                              className={classNames(
+                                open ? "text-white rotate-90" : "text-gray-100",
+                                "ml-3 flex-shrink-0 h-5 w-5 transform group-hover:text-gray-100 transition-colors ease-in-out duration-150"
+                              )}
+                              viewBox="0 0 20 20"
+                              aria-hidden="true"
+                            >
+                              <path
+                                d="M6 6L14 10L6 14V6Z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                          </Disclosure.Button>
+                          <Disclosure.Panel className="space-y-1">
+                            {item.children.map((subItem) => (
+                              <Disclosure.Button
+                                key={subItem.name}
+                                as="span"
+                                className="group w-full rounded-md flex items-center pl-11 pr-2 py-2 text-sm font-medium text-white  hover:text-gray-100 hover:bg-[#d3eded54]"
+                              >
+                                <Link href={subItem.href}>
+                                  <a> {subItem.name}</a>
+                                </Link>
+                              </Disclosure.Button>
+                            ))}
+                          </Disclosure.Panel>
+                        </>
+                      )}
+                    </Disclosure>
+                  )
+                )}
               </nav>
             </div>
           </div>
