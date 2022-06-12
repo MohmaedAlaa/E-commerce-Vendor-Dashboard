@@ -38,7 +38,7 @@ export const options = {
     },
     yAxis: {
       display: true,
-      beginAtZero: true,
+     
       stacked: true,
       grid: {
         display: false,
@@ -47,7 +47,9 @@ export const options = {
   },
 };
 
-var OrginData = [10, 50, 60, 70, 30, 40, 50, 80, 60, 70, 50, 90];
+// beginAtZero: true,
+
+var OrginData = [10, 50, 60, 70, 30, 140, 50, 80, 60, 70, 50, 90];
 
 export const argMax = (array) => {
   return array.map((x, i) => [x, i]).reduce((r, a) => (a[0] > r[0] ? a : r))[1];
@@ -86,9 +88,9 @@ export const data = {
 
 export default function ChartLine({empty}) {
   return (
-    <div className=" relative  p-4  md:basis-1/2 sm:basis-1/1 md:max-w-[48%]  rounded-[14px] m-2  h-[270px]	 bg-[#fff]  border shadow-md md:flex-row  ">
+    <div className=" relative  p-4  md:basis-1/2 sm:basis-1 md:max-w-[512px]  rounded-[14px] my-2  h-[270px]	 bg-[#fff]  border shadow-md md:flex-row  ">
       <div className="text-xl w-auto absolute ">Sold Amounts</div>
-      <div className="flex flex-wrap justify-between w-[1/4]  ">
+      <div className="flex flex-wrap justify-between w-[1/4] ">
         {/* start dropdown */}
 
         <Menu as="div" className="relative inline-block text-right ml-auto">
@@ -180,7 +182,7 @@ export default function ChartLine({empty}) {
       
       
       <div className="flex flex-wrap justify-between    ">
-        <div className="flex  flex-col  mt-10 w-[75%] ">
+        <div className="flex  flex-col  mt-10 md:w-[75%] w-full ">
           <div className="flex w-full h-full  ">
             {ChartJS.register(
               CategoryScale,
@@ -192,9 +194,9 @@ export default function ChartLine({empty}) {
           </div>
         </div>
 
-        <div className="flex flex-col   w-[25%] content-between	mb-10">
-          <div className="flex flex-wrap columns-1 justify-between mb-auto ">
-            <div className="flex flex-wrap justify-between mb-2 ">
+        <div className="flex md:flex-col flex-row  md:w-[25%]  w-full content-between	md:mt-14 ">
+          <div className="flex flex-wrap md:columns-1 justify-between md:mb-auto w-full ">
+            <div className="flex flex-wrap justify-between md:mb-2  ">
               <span className="text-[#3D897A] pr-2 text-[40px] h-auto leading-4	">
                 &#8226;
               </span>

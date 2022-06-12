@@ -4,8 +4,8 @@ import Image from "next/image";
 export default function TotalCard() {
   const Empty=false;
   return (
-    <div  className="flex flex-wrap justify-between">
-      <div className="relative flex flex-wrap justify-between lg:basis-1/4 md:basis-1/2 sm:basis-1/1 lg:max-w-[23%] h-[102px] rounded-[14px] m-2  	 bg-[#577B7A]  border shadow-md md:flex-row md:max-w-xl ">
+    <div  className="flex flex-wrap md:justify-between justify-center">
+      <div className="relative flex flex-wrap justify-between  w-[244px] h-[102px] rounded-[14px] m-1 my-3 	 bg-[#577B7A]  border shadow-md md:flex-row md:max-w-xl ">
         <div className="flex flex-col justify-between p-4 pl-7 leading-normal">
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-white dark:text-white">
            {Empty?(0):('120$')} 
@@ -20,7 +20,7 @@ export default function TotalCard() {
    
         </div>
       </div>
-      <div className="relative flex flex-wrap justify-between lg:basis-1/4 md:basis-1/2 sm:basis-1/1 lg:max-w-[23%] h-[102px] rounded-[14px] m-2  	 bg-[#EE6363]  border shadow-md md:flex-row md:max-w-xl ">
+      <div className="relative flex flex-wrap justify-between  w-[244px] h-[102px] rounded-[14px] m-1 my-3 	 bg-[#EE6363]  border shadow-md md:flex-row md:max-w-xl ">
         <div className="flex flex-col justify-between p-4 pl-7 leading-normal">
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-white dark:text-white">
            {Empty?(0):('120$')} 
@@ -35,7 +35,7 @@ export default function TotalCard() {
    
         </div>
       </div>
-      <div className="relative flex flex-wrap justify-between lg:basis-1/4 md:basis-1/2 sm:basis-1/1 lg:max-w-[23%] h-[102px] rounded-[14px] m-2  	 bg-[#F3D030]  border shadow-md md:flex-row md:max-w-xl ">
+      <div className="relative flex flex-wrap justify-between  w-[244px] h-[102px] rounded-[14px] m-1 my-3 	 bg-[#F3D030]  border shadow-md md:flex-row md:max-w-xl ">
         <div className="flex flex-col justify-between p-4 pl-7 leading-normal">
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-white dark:text-white">
           {Empty?(0):('€ 2.3 K')} 
@@ -50,7 +50,7 @@ export default function TotalCard() {
    
         </div>
       </div>
-      <div className="relative   flex flex-wrap justify-between lg:basis-1/4 md:basis-1/2 sm:basis-1/1 lg:max-w-[23%] h-[102px] rounded-[14px] m-2  	 bg-[#3D897A]  border shadow-md md:flex-row md:max-w-xl ">
+      <div className="relative   flex flex-wrap justify-between  w-[244px] h-[102px] rounded-[14px] m-1 my-3 	 bg-[#3D897A]  border shadow-md md:flex-row md:max-w-xl ">
         <div className="flex flex-col justify-between p-4 pl-7 leading-normal">
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-white dark:text-white">
             {Empty?(0):('120$')} 

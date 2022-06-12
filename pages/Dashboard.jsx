@@ -5,7 +5,7 @@ import TotalCard from '../components/dashboard/TotalCard'
 
 export default function Dashboard() {
   return (
-    <div className='p-5'>
+    <div className='md:p-5'>
         <TotalCard/>
         <AllCharts/>
         <ProductsLayout/>

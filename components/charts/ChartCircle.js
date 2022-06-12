@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function ChartCircle({empty}) {
 
   return (
-    <div className=" relative  p-4  md:basis-1/2 sm:basis-1/1 md:max-w-[48%]  rounded-[14px] m-2  h-[270px]	 bg-[#fff]  border shadow-md md:flex-row  ">
+    <div className=" relative  p-4  md:basis-1/2 sm:basis-1 md:max-w-[512px]  rounded-[14px] my-2  h-[270px]	 bg-[#fff]  border shadow-md md:flex-row flex-wrap ">
       <div className="text-xl w-auto absolute ">Orders</div>
       {empty ?(
         <div className="m-auto flex  flex-col justify-center items-center h-full pb-5 ">

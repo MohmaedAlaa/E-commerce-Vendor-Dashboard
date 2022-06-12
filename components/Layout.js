@@ -9,12 +9,14 @@ import {
   InboxIcon,
   MenuAlt2Icon,
   UsersIcon,
-  XIcon,
+  XIcon,QuestionMarkCircleIcon,
 } from "@heroicons/react/outline";
+// question-mark-circle
+
 import { SearchIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 import { useRouter } from "next/router";
-
+// import {}
 const navigation = [
   { name: "Dashboard", href: "/", icon: HomeIcon, current: true },
   // { name: "Products", href: "/products", icon: UsersIcon, current: false },
@@ -27,7 +29,7 @@ const navigation = [
       { name: "Product Bulk Upload", href: "/ProductBulkUpload" },
       { name: "Table", href: "/Table" },
     ],
-  },
+  },{ name: "Support", href: "/support", icon: QuestionMarkCircleIcon, current: false },
 ];
 
 const userNavigation = [
