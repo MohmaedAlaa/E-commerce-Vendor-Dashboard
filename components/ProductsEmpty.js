@@ -15,12 +15,12 @@ const ProductsEmpty = () => {
       </h3>
       <p className="my-2 text-[#707082]">Start adding your products now!</p>
       <div className="mt-4">
-        <button
-          type="button"
-          className="inline-flex max-w-xs items-center justify-center rounded-md border border-transparent bg-[#3d897a] px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-[#3d897a] focus:outline-none focus:ring-2 focus:ring-[#3d897a] focus:ring-offset-2"
-        >
-          + Add
-        </button>
+      <button
+            type="button"
+            className="inline-flex max-w-xs items-center justify-center rounded-md border border-transparent bg-[#3d897a] px-8 py-2 text-sm font-medium text-white shadow-sm hover:bg-[#3d897a] focus:outline-none focus:ring-2 focus:ring-[#3d897a] focus:ring-offset-2"
+          >
+            + Add
+          </button>
       </div>
     </div>
   );

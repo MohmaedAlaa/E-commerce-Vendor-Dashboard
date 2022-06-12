@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Filters from "../components/demo/Filters";
+import Dashboard from './Dashboard';
 export default function Home() {
   return (
     <div className="container">
@@ -10,8 +11,9 @@ export default function Home() {
       </Head>
 
       <main className="container">
-        <p className="text-4xl text-blue-600">heading</p>
-        <Filters />
+        {/* <p className="text-4xl text-blue-600">heading</p> */}
+        {/* <Filters /> */}
+          <Dashboard/>
       </main>
     </div>
   );
