@@ -1,25 +1,11 @@
-/*
-  This example requires Tailwind CSS v3.0+ 
-  
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
-*/
 import { useLayoutEffect, useRef, useState } from "react";
 import Select from "../components/Select";
-import orderDetails from "./orderDetails";
-// import Example from "../components/SelectOrders";
-const product = [
-  {
+import Link from 'next/link'
+import Example from "../components/ordersDropDown";
+import PopUp from "../components/PopUp";
+
+export const product = [
+  { id:'1',
     code: "#123234ggd",
     no: "1",
     amount: "$ 30",
@@ -32,6 +18,20 @@ const product = [
     quantity:'1',
     status:'pending'
   },
+  { 
+    id:'2',
+    code: "#878654gd",
+    no: "2",
+    amount: "$ 50",
+    ShippingAddress:'Röpkestraße 35,Düsseldorf,40235,Germany',
+    orderDate:"23/5/2022-11:18 PM",
+    orderStatus:'pending',
+    paymentMethod:'Paypal',
+    variation:'XL.Blue',
+    SKU:'XLpoloshirt001',
+    quantity:'1',
+    status:'pending'
+},
   // More product...
 ];
 
@@ -70,8 +70,10 @@ export default function products() {
       </div>
       <div className="mt-4 sm:mt-8  flex justify-between">
         <div className="flex gap-2 items-center">
-          {/* <Select /> */}
-          {/* <Example /> */}
+          <Example />
+                        
+        
+
         </div>
       </div>
       <div className="mt-8 flex flex-col">
@@ -161,9 +163,10 @@ export default function products() {
                       </td>
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500"
                       >
-                        <a href="/orderDetails">{product.code}</a>
+                        <Link href={`/orders/${product.id}`}>
+                          {product.code}
+                        </Link>
                         <orderDetails product={product} />
-                        {console.log(product)}
                       </td>
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                         {product.no}
@@ -172,7 +175,7 @@ export default function products() {
                         {product.amount}
                       </td>
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                        <button className="border border-5 px-2 py-1 rounded-[8px]">Tracking Info</button>
+                        <PopUp />
                       </td>
                       <td className="whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm  text-gray-500 font-medium sm:pr-6">
                         <button className="border border-5 px-2 py-1 rounded-[8px]">Download Invoice</button>

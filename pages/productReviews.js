@@ -1,34 +1,22 @@
-/*
-  This example requires Tailwind CSS v3.0+ 
-  
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
-*/
 import { useLayoutEffect, useRef, useState } from "react";
 import SelectProductReviews from "../components/SelectProductReviews";
-import View from "./View";
-const product = [
-  {
+// import View from "./view[pid]";
+import Link from 'next/link'
+export const product = [
+  { id : '1',
     product: "Polo Shirt",
     rate: "5",
     date: "23/5/2022-11:18 PM",
     review: "Great shirt! The size is perfect , The color is better than",
+    description:'Lorem ipsum dolor sit amet,consectetur adipiscing elit.Vivamus aliquam elitaelementum commodo.Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Praesent eujusto quis mi dapibus fermentum.In posuere sollicitudin imperdiet.'
   },
-  {
+  { 
+    id : '2',
     product: "Polo Shirt",
     rate: "3",
     date: "25/5/2022-11:18 PM",
     review: "Great shirt! The size is perfect , The color is better than",
+    description:'Lorem ipsum dolor sit amet,consectetur adipiscing elit.Vivamus aliquam elitaelementum commodo.Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Praesent eujusto quis mi dapibus fermentum.In posuere sollicitudin imperdiet.'
   },
   // More product...
 ];
@@ -148,13 +136,9 @@ export default function products() {
                         <p  className='truncate w-80'>{product.review}</p>
                       </td>
                       <td className="whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                        <a
-                          href="/view"
-                          className="text-[#3D897A] hover:text-[#3D897A] hover:underline"
-                        >
-                          View<span className="sr-only">, {product.name}</span>
-                          {/* <View product={product}/> */}
-                        </a>
+                      <Link href={`/productReviews/${product.id}`}>
+                        <a className="text-[#3D897A] hover:text-[#3D897A] hover:underline"> View</a>
+                      </Link>
                       </td>
                     </tr>
                   ))}

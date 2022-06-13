@@ -1,26 +1,18 @@
 import { useLayoutEffect, useRef, useState } from "react";
-import SelectProductReviews from "../components/SelectProductReviews";
+import SelectProductReviews from "../../components/SelectProductReviews";
 import { ChevronRightIcon } from "@heroicons/react/solid";
 import { data } from "autoprefixer";
+import { useRouter } from "next/router";
+import { product } from "../productReviews";
 
-const product = [
-  {
-    product: "Polo Shirt",
-    rate: "5",
-    date: "23/5/2022-11:18 PM",
-    review: "Great shirt! The size is perfect , The color is better than",
-    description:'Lorem ipsum dolor sit amet,consectetur adipiscing elit.Vivamus aliquam elitaelementum commodo.Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Praesent eujusto quis mi dapibus fermentum.In posuere sollicitudin imperdiet.'
-  },
-  // More product...
-];
 
 export default function View() {
-    
+  const router = useRouter();
+  const data = router.query;
+  const pid = data.pid;
   return (
 
     <div className="px-4 sm:px-6 lg:px-8">
-
-        {/* {product?console.log(product):console.log('loading')} */}
         <div className="flex flex-row">
             <a href={'/productReviews'} className='text-[#3D897A] hover:underline'>
                 Product Reviews
@@ -30,7 +22,7 @@ export default function View() {
         </div>
 
         <div className="rounded-[14px] mt-5" style={{'box-shadow': '2px 2px 20px #8A97A940'}}>
-            {product.map((product)=>(
+            {product.filter((product)=> product.id == pid).map((product)=>(
               <div className="p-6">
               
                 <div className="flex row">

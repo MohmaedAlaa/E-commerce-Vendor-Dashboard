@@ -1,27 +1,15 @@
 import { useLayoutEffect, useRef, useState } from "react";
-import SelectProductReviews from "../components/SelectProductReviews";
+import SelectProductReviews from "../../components/SelectProductReviews";
 import { ChevronRightIcon } from "@heroicons/react/solid";
 import { data } from "autoprefixer";
-
-const product = [
-    {
-      code: "#123234ggd",
-      no: "1",
-      amount: "$ 30",
-      ShippingAddress:'Röpkestraße 35,Düsseldorf,40235,Germany',
-      orderDate:"23/5/2022-11:18 PM",
-      orderStatus:'pending',
-      paymentMethod:'Paypal',
-      variation:'XL.Blue',
-      SKU:'XLpoloshirt001',
-      quantity:'1',
-      status:'pending'
-    },
-    // More product...
-  ];
+import { useRouter } from "next/router";
+import { product } from "../orders";
 
 export default function orderDetails() {
-    
+  const router = useRouter();
+  const data = router.query;
+  const pid = data.pid;
+
   return (
 
     <div className="px-4 sm:px-6 lg:px-8">
@@ -58,7 +46,7 @@ export default function orderDetails() {
         
         <div className="rounded-[14px]" style={{'box-shadow': '2px 2px 20px #8A97A940'}}>
             <div className="p-6">
-                {product.map((product)=>(
+                {product.filter((product)=> product.id == pid).map((product)=>(
                     <div>
                         <h1 className="text-[20px]">Order Summary</h1>
                         <hr className="my-3 border border-[#CDCFDC]"></hr>
@@ -152,7 +140,7 @@ export default function orderDetails() {
                   </thead>
 
                   <tbody className="divide-y divide-gray-200 bg-white">
-                    {product.map((product) => (
+                    {product.filter((product)=> product.id == pid).map((product)=> (
                       <tr key={product.code}>
                         <td className="whitespace-nowrap px-3 py-4 text-sm">
                             <div className="ml-4 text-gray-500">
