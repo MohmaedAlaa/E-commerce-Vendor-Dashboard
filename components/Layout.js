@@ -1,4 +1,5 @@
-import { Fragment, useState } from "react";
+
+import React, { Fragment, useState } from "react";
 import { Dialog, Disclosure, Menu, Transition } from "@headlessui/react";
 import {
   BellIcon,
@@ -9,12 +10,15 @@ import {
   InboxIcon,
   MenuAlt2Icon,
   UsersIcon,
-  XIcon,
+  XIcon,QuestionMarkCircleIcon,
 } from "@heroicons/react/outline";
+// question-mark-circle
+
 import { SearchIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 import { useRouter } from "next/router";
-
+// import SupportIcon from "/support.svg";
+const SupportIcon = React.forwardRef(() => <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="30px" viewBox="0 0 30 30" width="35px" fill="#fff"><g><rect fill="none" height="24" width="24"/></g><g><g><path d="M21,12.22C21,6.73,16.74,3,12,3c-4.69,0-9,3.65-9,9.28C2.4,12.62,2,13.26,2,14v2c0,1.1,0.9,2,2,2h1v-6.1 c0-3.87,3.13-7,7-7s7,3.13,7,7V19h-8v2h8c1.1,0,2-0.9,2-2v-1.22c0.59-0.31,1-0.92,1-1.64v-2.3C22,13.14,21.59,12.53,21,12.22z"/><circle cx="9" cy="13" r="1"/><circle cx="15" cy="13" r="1"/><path d="M18,11.03C17.52,8.18,15.04,6,12.05,6c-3.03,0-6.29,2.51-6.03,6.45c2.47-1.01,4.33-3.21,4.86-5.89 C12.19,9.19,14.88,11,18,11.03z"/></g></g></svg>)
 const navigation = [
   { name: "Dashboard", href: "/", icon: HomeIcon, current: true },
   // { name: "Products", href: "/products", icon: UsersIcon, current: false },
@@ -27,7 +31,8 @@ const navigation = [
       { name: "Product Bulk Upload", href: "/ProductBulkUpload" },
       { name: "Table", href: "/Table" },
     ],
-  },
+  },{ name: "Support", href: "/support", icon: SupportIcon
+  , current: false },
 ];
 
 const userNavigation = [
@@ -261,8 +266,8 @@ export default function Layout({ children }) {
           </div>
         </div>
 
-        <div className="md:pl-64 bg-[#F2F4F7]">
-          <div className="max-w-7xl mx-auto flex flex-col md:px-8 xl:px-0">
+        <div className="md:pl-64 bg-[#F2F4F7] h-full">
+          <div className="max-w-7xl mx-auto flex flex-col md:px-8 xl:px-0 h-full ">
             <div className="sticky top-0 z-10 flex-shrink-0 h-16 bg-[#F2F4F7] border-b border-gray-200 flex">
               <button
                 type="button"
@@ -345,9 +350,9 @@ export default function Layout({ children }) {
               </div>
             </div>
 
-            <main className="flex-1">
-              <div className="pb-6">
-                <div className="px-4 h-screen sm:px-6 md:px-0 bg-[#F2F4F7]">
+            <main className="flex-1 h-full">
+              <div className="">
+                <div className="px-4 min-h-screen sm:px-6 md:px-0 bg-[#F2F4F7] pb-6 h-full" >
                   {children}
                 </div>
               </div>

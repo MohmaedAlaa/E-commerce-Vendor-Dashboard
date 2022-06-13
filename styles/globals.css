@@ -18,3 +18,17 @@ a {
 * {
   box-sizing: border-box;
 }
+.scroll-bar::-webkit-scrollbar {
+  width: 10px;
+
+}
+
+/* Track */
+.scroll-bar::-webkit-scrollbar-track {
+  background: #f1f1f1;  border-radius: 5px; 
+}
+ 
+/* Handle */
+.scroll-bar::-webkit-scrollbar-thumb {
+  background: #3D897A;  border-radius: 5px; 
+}
