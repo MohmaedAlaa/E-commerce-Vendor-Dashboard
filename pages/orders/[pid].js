@@ -95,8 +95,8 @@ export default function orderDetails() {
         <div className="rounded-[14px] mt-7 min-w-full divide-y divide-gray-300" style={{'box-shadow': '2px 2px 20px #8A97A940'}}>
             <div className="p-6">
                 <h1 className="text-[20px]">Order Details</h1>
-                <hr className="my-3 border border-[#CDCFDC]"></hr>
-                <table className="min-w-full divide-y divide-gray-300" cellspacing="0" cellpadding="0" style={{'border':'none'}}>
+                <hr className="mt-3 mb-2 border border-[#CDCFDC]"></hr>
+                <table className="min-w-full divide-y-[1.5px] divide-[#CDCFDC]" cellspacing="0" cellpadding="0" style={{'border':'none'}}>
 
                   <thead>
                     <tr>
@@ -138,7 +138,7 @@ export default function orderDetails() {
                       </th>
                     </tr>
                   </thead>
-
+                  
                   <tbody className="divide-y divide-gray-200 bg-white">
                     {product.filter((product)=> product.id == pid).map((product)=> (
                       <tr key={product.code}>
@@ -162,6 +162,7 @@ export default function orderDetails() {
                         <td className="whitespace-nowrap px-3 py-4 text-sm text-[#232323]">
                           {product.amount}
                         </td>
+                        <hr className="my-3 border border-[#CDCFDC]"></hr>
                       </tr>
                     ))}
                   </tbody>

@@ -9,8 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
     "@headlessui/react": "^1.6.4",
     "@heroicons/react": "^1.0.6",
+    "@mui/icons-material": "^5.8.4",
+    "@mui/lab": "^5.0.0-alpha.86",
+    "@mui/material": "^5.8.4",
     "@types/faker": "^6.6.9",
     "faker": "^6.6.6",
     "next": "^12.1.6",

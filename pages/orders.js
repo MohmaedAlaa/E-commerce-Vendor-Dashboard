@@ -1,8 +1,9 @@
 import { useLayoutEffect, useRef, useState } from "react";
 import Select from "../components/Select";
 import Link from 'next/link'
-import Example from "../components/ordersDropDown";
-import PopUp from "../components/PopUp";
+import Example from "../components/OrdersDropDown";
+import PopUp from "../components/OrdersPopUp";
+import SimCardDownloadOutlinedIcon from '@mui/icons-material/SimCardDownloadOutlined';
 
 export const product = [
   { id:'1',
@@ -45,18 +46,25 @@ export default function products() {
   const [indeterminate, setIndeterminate] = useState(false);
   const [selectedproduct, setSelectedproduct] = useState([]);
 
-  useLayoutEffect(() => {
-    const isIndeterminate =
-      selectedproduct.length > 0 && selectedproduct.length < product.length;
-    setChecked(selectedproduct.length === product.length);
-    setIndeterminate(isIndeterminate);
-    checkbox.current.indeterminate = isIndeterminate;
-  }, [selectedproduct]);
+  // useLayoutEffect(() => {
+  //   const isIndeterminate =
+  //     selectedproduct.length > 0 && selectedproduct.length < product.length;
+  //   setChecked(selectedproduct.length === product.length);
+  //   setIndeterminate(isIndeterminate);
+  //   checkbox.current.indeterminate = isIndeterminate;
+  // }, [selectedproduct]);
 
   function toggleAll() {
     setSelectedproduct(checked || indeterminate ? [] : product);
     setChecked(!checked && !indeterminate);
     setIndeterminate(false);
+  }
+
+  function isEmpty(object) {
+    for (const property in object) {
+      return false;
+    }
+    return true;
   }
 
   return (
@@ -71,15 +79,14 @@ export default function products() {
       <div className="mt-4 sm:mt-8  flex justify-between">
         <div className="flex gap-2 items-center">
           <Example />
-                        
-        
-
         </div>
       </div>
-      <div className="mt-8 flex flex-col">
+      <div className="mt-8 flex flex-col" style={{'box-shadow':'0px 10px 60px #DCDCDC8C'}}>
         <div className="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-            <div className="relative overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
+              <div className="relative overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
+              {
+              !isEmpty(product)?
               <table className="min-w-full table-fixed divide-y divide-gray-300">
                 <thead>
                   <tr>
@@ -133,13 +140,13 @@ export default function products() {
                     </th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-gray-200 bg-white">
+                <tbody className="bg-white">
                   {product.map((product) => (
                     <tr
                       key={product.email}
                       className={
                         selectedproduct.includes(product)
-                          ? "bg-gray-50"
+                          ? "bg-white"
                           : undefined
                       }
                     >
@@ -178,12 +185,22 @@ export default function products() {
                         <PopUp />
                       </td>
                       <td className="whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm  text-gray-500 font-medium sm:pr-6">
-                        <button className="border border-5 px-2 py-1 rounded-[8px]">Download Invoice</button>
+                        <button className="border border-5 px-2 py-1 rounded-[8px]"><SimCardDownloadOutlinedIcon className="w-5" /> Download Invoice</button>
                       </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
+              :
+              <div className="lg:block relative flex-1 w-full bg-white px-72 py-24 w-full">
+                <img
+                className="object-cover"
+                src="/Orders.svg"
+                alt=""
+                />
+                <p className='ml-20 mt-5 text-[18px]'>No orders yet!</p>
+              </div>
+              }
             </div>
           </div>
         </div>

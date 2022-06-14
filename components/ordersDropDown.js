@@ -34,11 +34,11 @@ export default function Example() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="bg-white border border-[#D4D4D4] rounded-[10px]" style={{'box-shadow':'0px 10px 60px #DCDCDC8C'}}>
+    <div className="border border-[#D4D4D4] rounded-[10px]" style={{'box-shadow':'0px 10px 60px #DCDCDC8C'}}>
       <div className="max-w-3xl mx-auto px-2 text-center sm:px-6 lg:max-w-7xl lg:px-4">
         <section
           aria-labelledby="filter-heading"
-          className="py-2"
+          className="py-1"
         >
           <div className="flex items-center justify-between">
             <Popover.Group className="hidden sm:flex sm:items-baseline sm:space-x-8">
@@ -50,10 +50,15 @@ export default function Example() {
                   className="relative z-10 inline-block text-left"
                 >
                   <div>
-                    <Popover.Button className="group inline-flex items-center justify-center text-sm font-medium text-[#686868] hover:text-[#686868] focus:outline-none	">
+                    <Popover.Button className="group inline-flex items-center justify-center text-sm font-medium text-[#686868] hover:text-[#686868] focus:outline-none	gap-2 pt-1">
+                      <div className='rotate-90 mt-1 p-[-10px]'>
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" className="w-5 h-5">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                        </svg>
+                      </div>
                       <span>{section.name}</span>
                       <ChevronDownIcon
-                        className="flex-shrink-0 -mr-1 ml-1 h-5 w-5 text-[#686868] group-hover:text-[#686868] ml-32"
+                        className="flex-shrink-0 -mr-1 ml-1 h-5 w-5 text-[#686868] group-hover:text-[#686868] ml-28"
                         aria-hidden="true"
                       />
                     </Popover.Button>
@@ -68,7 +73,7 @@ export default function Example() {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                   >
-                    <Popover.Panel className="origin-top-right absolute left-[-15px] top-9 bg-white rounded-md pl-4 pr-16 py-4  ring-1 ring-black ring-opacity-5 focus:outline-none" style={{'box-shadow': '0px 10px 60px #DCDCDC8C'}}>
+                    <Popover.Panel className="origin-top-right absolute left-[-15px] top-[43px] bg-white rounded-md pl-4 pr-[85px] py-4  ring-1 ring-black ring-opacity-5 focus:outline-none" style={{'box-shadow': '0px 10px 60px #DCDCDC8C'}}>
                       <form className="space-y-4">
                         <p className=" pr-6 text-sm font-medium text-[#686868] whitespace-nowrap">Delivered</p>
                         {section.checkBox.map((option, optionIdx) => (
