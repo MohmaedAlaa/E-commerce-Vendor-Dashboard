@@ -32,3 +32,9 @@ a {
 .scroll-bar::-webkit-scrollbar-thumb {
   background: #3D897A;  border-radius: 5px; 
 }
+.quill > .ql-toolbar:first-child {
+  display: none !important;
+}
+.ql-editor{
+  min-height:100px;
+} 

@@ -1,6 +1,6 @@
 import {  useRef, useState, useEffect } from "react";
 import Link from 'next/link'
-import { MessagesList } from "/public/Data/MessagesListData";
+
 
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
@@ -11,7 +11,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function SupportTable() {
+export default function SupportTable({MessagesList}) {
   const checkbox = useRef();
   const [checked, setChecked] = useState(false);
   const [indeterminate, setIndeterminate] = useState(false);
@@ -33,7 +33,7 @@ export default function SupportTable() {
   }
 
   return (
-    <div className="mt-8 flex ">
+    <div className="mt-8 flex  overflow-x-auto overflow-y-scroll scroll-bar">
       <table className="w-full text-sm text-left table-auto	bg-white shadow-xl shadow-gray-100 rounded-2xl p-3 px-5">
         <thead className="sticky top-0  border-b w-full">
           <tr className="px-5">
@@ -76,7 +76,7 @@ export default function SupportTable() {
 
         <Menu as="div" className="relative inline-block text-right ml-auto bg-white mr-5">
           <div>
-            <Menu.Button className="inline-flex justify-center w-full ml-auto ">
+            <Menu.Button className="inline-flex justify-center w-full ml-auto  z-0">
               
               <DotsVerticalIcon
                 className="-mr-1 ml-auto h-5 w-5"
@@ -94,8 +94,8 @@ export default function SupportTable() {
             leaveFrom="transform opacity-100 scale-100"
             leaveTo="transform opacity-0 scale-95"
           >
-            <Menu.Items className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white border-none">
-              <div className="py-1">
+            <Menu.Items className="origin-top-right  absolute right-0 mt-2 w-56 rounded-md shadow-lg z-30 bg-white border-none">
+              <div className="py-1 z-30 bg-white relative">
                 <Menu.Item>
                   {({ active }) => (
                     <a
@@ -163,7 +163,7 @@ export default function SupportTable() {
                 <div className="flex items-center">
                   <div className="ml-4">
                     <div className="font-medium text-gray-900">
-                    <Link href={`/message/${encodeURIComponent(Message.id)}`}>
+                    <Link href={`/message/${Message.id}`}>
 
                     <a> #{Message.id}</a>
                       </Link>
@@ -198,7 +198,7 @@ export default function SupportTable() {
                   className="relative inline-block text-right ml-auto bg-white"
                 >
                   <div>
-                    <Menu.Button className="inline-flex justify-center w-full ml-auto ">
+                    <Menu.Button className="inline-flex justify-center w-full ml-auto z-10 ">
                       <DotsVerticalIcon
                         className="-mr-1 ml-auto h-5 w-5"
                         aria-hidden="true"
@@ -215,7 +215,7 @@ export default function SupportTable() {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                   >
-                    <Menu.Items className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black  focus:outline-none">
+                    <Menu.Items className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg   z-30 bg-white border-none focus:outline-none">
                       <div className="py-1">
                         <Menu.Item>
                           {({ active }) => (

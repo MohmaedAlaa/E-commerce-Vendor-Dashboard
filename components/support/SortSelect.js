@@ -15,13 +15,14 @@ function classNames(...classes) {
 }
 
 export default function SortSelect() {
-  const [selected, setSelected] = useState(people[3]);
-  console.log(selected);
+  const [selected, setSelected] = useState(people[0]);
+ 
   return (
     <Listbox value={selected} onChange={setSelected}>
       {({ open }) => (
-        <>
-          <Listbox.Label className=" text-sm font-medium text-[#686868] align-middle my-auto">
+        <div className="flex flex-wrap flex-row justify-between " >
+
+          <Listbox.Label className=" text-sm font-medium text-[#686868] align-middle my-auto ">
             Sort By
           </Listbox.Label>
           <div className=" relative">
@@ -84,7 +85,7 @@ export default function SortSelect() {
               </Listbox.Options>
             </Transition>
           </div>
-        </>
+        </div>
       )}
     </Listbox>
   );
