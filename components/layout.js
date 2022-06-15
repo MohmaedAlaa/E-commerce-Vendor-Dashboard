@@ -1,5 +1,6 @@
-import React, { useState ,Fragment } from 'react';
-import { Dialog, Menu, Transition } from "@headlessui/react";
+
+import React, { Fragment, useState } from "react";
+import { Dialog, Disclosure, Menu, Transition } from "@headlessui/react";
 import {
   BellIcon,
   CalendarIcon,
@@ -9,13 +10,16 @@ import {
   InboxIcon,
   MenuAlt2Icon,
   UsersIcon,
-  XIcon,
-  StarIcon,
+  XIcon,QuestionMarkCircleIcon,
 } from "@heroicons/react/outline";
-import StarBorderIcon  from '@mui/icons-material/StarBorder';
+// question-mark-circle
+
 import { SearchIcon } from "@heroicons/react/solid";
+import StarBorderIcon  from '@mui/icons-material/StarBorder';
 import Link from "next/link";
 import { useRouter } from "next/router";
+// import SupportIcon from "/support.svg";
+const SupportIcon = React.forwardRef(() => <svg enable-background="new 0 0 24 24" height="30px" viewBox="0 0 30 30" width="35px" fill="#fff"><g><rect fill="none" height="24" width="24"/></g><g><g><path d="M21,12.22C21,6.73,16.74,3,12,3c-4.69,0-9,3.65-9,9.28C2.4,12.62,2,13.26,2,14v2c0,1.1,0.9,2,2,2h1v-6.1 c0-3.87,3.13-7,7-7s7,3.13,7,7V19h-8v2h8c1.1,0,2-0.9,2-2v-1.22c0.59-0.31,1-0.92,1-1.64v-2.3C22,13.14,21.59,12.53,21,12.22z"/><circle cx="9" cy="13" r="1"/><circle cx="15" cy="13" r="1"/><path d="M18,11.03C17.52,8.18,15.04,6,12.05,6c-3.03,0-6.29,2.51-6.03,6.45c2.47-1.01,4.33-3.21,4.86-5.89 C12.19,9.19,14.88,11,18,11.03z"/></g></g></svg>)
 
 const checklist = React.forwardRef(() => <svg enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF" className='mr-3'><rect fill="none" height="24" width="24"/><path d="M22,7h-9v2h9V7z M22,15h-9v2h9V15z M5.54,11L2,7.46l1.41-1.41l2.12,2.12l4.24-4.24l1.41,1.41L5.54,11z M5.54,19L2,15.46 l1.41-1.41l2.12,2.12l4.24-4.24l1.41,1.41L5.54,19z"/></svg>)
 const restore = React.forwardRef(() => <svg height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF" className='mr-3'><path d="M0 0h24v24H0V0z" fill="none"/><path d="M13 3c-4.97 0-9 4.03-9 9H1l4 3.99L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.25 2.52.77-1.28-3.52-2.09V8z"/></svg>)
@@ -23,15 +27,25 @@ const dashboard = React.forwardRef(() => <svg height="24px" viewBox="0 0 24 24" 
 
 const navigation = [
   { name: "Dashboard", href: "/", icon: dashboard, current: true },
-  { name: "products", href: "/products", icon: UsersIcon, current: false },
+  // { name: "Products", href: "/products", icon: UsersIcon, current: false },
+  {
+    name: "Products",
+    icon: FolderIcon,
+    current: false,
+    children: [
+      { name: "Products", href: "/products" },
+      { name: "Product Bulk Upload", href: "/ProductBulkUpload" },
+      { name: "Table", href: "/Table" },
+    ],
+    
+  },
   { name: "Orders", href: "/orders", icon: checklist  , current: false },
   { name: "Product Reviews", href: "/productReviews", icon: StarBorderIcon, current: false },
   { name: "Commission History", href: "/commissionHistory", icon: restore, current: false },
-  // { name: "Projects", href: "#", icon: FolderIcon, current: false },
-  // { name: "Calendar", href: "#", icon: CalendarIcon, current: false },
-  // { name: "Documents", href: "#", icon: InboxIcon, current: false },
-  // { name: "Reports", href: "#", icon: ChartBarIcon, current: false },
+  { name: "Support", href: "/support", icon: SupportIcon
+  , current: false },
 ];
+
 const userNavigation = [
   { name: "Your Profile", href: "/" },
   { name: "Settings", href: "/" },
@@ -45,7 +59,6 @@ function classNames(...classes) {
 export default function Layout({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const router = useRouter();
-  console.log(router);
   return (
     <>
       {/*
@@ -117,7 +130,7 @@ export default function Layout({ children }) {
                     />
                   </div>
                   <div className="mt-5 flex-1 h-0 overflow-y-auto">
-                    {/* <nav className="px-2 space-y-1">
+                    <nav className="px-2 space-y-1">
                       {navigation.map((item) => (
                         <a
                           key={item.name}
@@ -141,7 +154,7 @@ export default function Layout({ children }) {
                           {item.name}
                         </a>
                       ))}
-                    </nav> */}
+                    </nav>
                   </div>
                 </Dialog.Panel>
               </Transition.Child>
@@ -160,7 +173,7 @@ export default function Layout({ children }) {
               <img className="h-8 w-auto" src="/logoLight.svg" alt="mytreety" />
             </div>
             <div className="flex-grow mt-16 flex flex-col">
-              <nav className="flex-1 px-2 pb-4 space-y-1">
+              {/* <nav className="flex-1 px-2 pb-4 space-y-1">
                 {navigation.map((item) => (
                   <Link href={item.href} key={item.name}>
                     <a
@@ -184,15 +197,89 @@ export default function Layout({ children }) {
                     </a>
                   </Link>
                 ))}
+              </nav> */}
+
+              <nav className="flex-1 mt-8 px-2 space-y-1" aria-label="Sidebar">
+                {navigation.map((item) =>
+                  !item.children ? (
+                    <div key={item.name}>
+                      <Link href={item.href}>
+                        <a
+                          className={classNames(
+                            item.current
+                              ? " text-white hover:bg-[#d3eded54]"
+                              : " text-white hover:bg-[#d3eded54] ",
+                            "group w-full flex items-center pl-2 py-2 text-sm font-medium rounded-md"
+                          )}
+                        >
+                          <item.icon
+                            className={classNames(
+                              item.current ? "text-white" : "text-white ",
+                              "mr-3 flex-shrink-0 h-6 w-6"
+                            )}
+                            aria-hidden="true"
+                          />
+                          {item.name}
+                        </a>
+                      </Link>
+                    </div>
+                  ) : (
+                    <Disclosure as="div" key={item.name} className="space-y-1">
+                      {({ open }) => (
+                        <>
+                          <Disclosure.Button
+                            className={classNames(
+                              item.current
+                                ? "bg-transparent text-white"
+                                : "bg-transparent text-white hover:bg-[#d3eded54] bg-opacity-10 hover:text-white",
+                              "group w-full flex items-center pl-2 pr-1 py-2 text-left text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-[#3d897a]"
+                            )}
+                          >
+                            <item.icon
+                              className="mr-3 flex-shrink-0 h-6 w-6 text-white "
+                              aria-hidden="true"
+                            />
+                            <span className="flex-1">{item.name}</span>
+                            <svg
+                              className={classNames(
+                                open ? "text-white rotate-90" : "text-gray-100",
+                                "ml-3 flex-shrink-0 h-5 w-5 transform group-hover:text-gray-100 transition-colors ease-in-out duration-150"
+                              )}
+                              viewBox="0 0 20 20"
+                              aria-hidden="true"
+                            >
+                              <path
+                                d="M6 6L14 10L6 14V6Z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                          </Disclosure.Button>
+                          <Disclosure.Panel className="space-y-1">
+                            {item.children.map((subItem) => (
+                              <Disclosure.Button
+                                key={subItem.name}
+                                as="span"
+                                className="group w-full rounded-md flex items-center pl-11 pr-2 py-2 text-sm font-medium text-white  hover:text-gray-100 hover:bg-[#d3eded54]"
+                              >
+                                <Link href={subItem.href}>
+                                  <a> {subItem.name}</a>
+                                </Link>
+                              </Disclosure.Button>
+                            ))}
+                          </Disclosure.Panel>
+                        </>
+                      )}
+                    </Disclosure>
+                  )
+                )}
               </nav>
             </div>
           </div>
         </div>
 
-        <div className="md:pl-64">
-          <div className="mx-auto flex flex-col md:px-8 xl:px-0 w-[95%]">
-            <div className="sticky top-0 z-10 flex-shrink-0 h-16 bg-white border-b border-gray-200 flex">
-              {/* <div className='w-full text-white'>p</div> */}
+        <div className="md:pl-64 bg-[#F2F4F7] h-full">
+          <div className="max-w-7xl mx-auto flex flex-col md:px-8 xl:px-0 h-full ">
+            <div className="sticky top-0 z-10 flex-shrink-0 h-16 bg-[#F2F4F7] border-b border-gray-200 flex">
               <button
                 type="button"
                 className="border-r border-gray-200 px-4 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 md:hidden"
@@ -202,8 +289,26 @@ export default function Layout({ children }) {
                 <MenuAlt2Icon className="h-6 w-6" aria-hidden="true" />
               </button>
               <div className="flex-1 flex justify-between px-4 md:px-0">
-
-                <div className="ml-4 flex items-center md:ml-6 absolute right-0 top-4">
+                <div className="flex-1 flex">
+                  <form className="w-full flex md:ml-0" action="#" method="GET">
+                    <label htmlFor="search-field" className="sr-only">
+                      Search
+                    </label>
+                    <div className="relative w-full text-gray-400 focus-within:text-gray-600">
+                      <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center">
+                        <SearchIcon className="h-5 w-5" aria-hidden="true" />
+                      </div>
+                      <input
+                        id="search-field"
+                        className="block bg-[#F2F4F7] h-full w-full border-transparent py-2 pl-8 pr-3 text-gray-900 placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-0 focus:border-transparent sm:text-sm"
+                        placeholder="Search"
+                        type="search"
+                        name="search"
+                      />
+                    </div>
+                  </form>
+                </div>
+                <div className="ml-4 flex items-center md:ml-6">
                   <button
                     type="button"
                     className="bg-white p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
@@ -256,9 +361,11 @@ export default function Layout({ children }) {
               </div>
             </div>
 
-            <main className="flex-1">
-              <div className="py-6">
-                <div className="px-4 sm:px-6 md:px-0">{children}</div>
+            <main className="flex-1 h-full">
+              <div className="">
+                <div className="px-4 min-h-screen sm:px-6 md:px-0 bg-[#F2F4F7] pb-6 h-full" >
+                  {children}
+                </div>
               </div>
             </main>
           </div>
