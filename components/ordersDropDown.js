@@ -34,7 +34,7 @@ export default function Example() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="border border-[#D4D4D4] rounded-[10px]" style={{'box-shadow':'0px 10px 60px #DCDCDC8C'}}>
+    <div className="border border-[#D4D4D4] rounded-[10px] bg-white" style={{'box-shadow':'0px 10px 60px #DCDCDC8C'}}>
       <div className="max-w-3xl mx-auto px-2 text-center sm:px-6 lg:max-w-7xl lg:px-4">
         <section
           aria-labelledby="filter-heading"

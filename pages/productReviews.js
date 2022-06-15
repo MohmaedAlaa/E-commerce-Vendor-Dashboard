@@ -101,7 +101,7 @@ export default function products() {
       <div className="mt-8 flex flex-col"  style={{'box-shadow':'0px 10px 60px #DCDCDC8C'}}>
         <div className="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-            <div className="relative overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg px-10 py-4">
+            <div className="relative overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg px-10 py-4 bg-white">
               {
                 !isEmpty(product)?
                 <table className="min-w-full table-fixed divide-y divide-gray-300">
