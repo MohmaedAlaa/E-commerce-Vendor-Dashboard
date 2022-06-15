@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function ChartCircle({empty}) {
 
   return (
-    <div className=" relative  p-4  md:basis-1/2 sm:basis-1 md:max-w-[512px]  rounded-[14px] my-2  h-[270px]	 bg-[#fff]  border shadow-md md:flex-row flex-wrap ">
+    <div className=" relative   p-4 rounded-[14px]  w-full min-h-full	 bg-[#fff]  border shadow-md flex-row flex-wrap ">
       <div className="text-xl w-auto absolute ">Orders</div>
       {empty ?(
         <div className="m-auto flex  flex-col justify-center items-center h-full pb-5 ">
@@ -25,7 +25,7 @@ export default function ChartCircle({empty}) {
         </div>
       ):(
         <div className="flex flex-wrap justify-between    ">
-          <div className="flex  flex-col  mt-10 w-[50%] divide-y divide-[#EEEEEE]">
+          <div className="flex  flex-col  mt-10  md:w-[49%] w-full divide-y divide-[#EEEEEE]">
             <div className="flex flex-wrap justify-between py-3 ">
               <div className="flex text-[#686868]	">Total orders</div>
               <div className="flex text-black font-medium		 ">120</div>
@@ -44,7 +44,7 @@ export default function ChartCircle({empty}) {
             </div>
           </div>
 
-          <div className="flex flex-col pl-10  w-[50%] content-between	">
+          <div className="flex flex-col lg:pl-10   md:w-[49%] w-full   content-between	">
             <div className="flex items-center w-auto m-auto relative">
               <Doughnut
                 data={doughnutData}

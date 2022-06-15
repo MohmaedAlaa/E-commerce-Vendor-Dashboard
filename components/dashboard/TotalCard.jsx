@@ -5,7 +5,8 @@ export default function TotalCard() {
   const Empty=false;
   return (
     <div  className="flex flex-wrap md:justify-between justify-center">
-      <div className="relative flex flex-wrap justify-between  w-[244px] h-[102px] rounded-[14px] m-1 my-3 	 bg-[#577B7A]  border shadow-md md:flex-row md:max-w-xl ">
+      <div className="sm:w-[50%]  lg:w-[25%]  w-full h-[112px] px-3  py-3 ">
+      <div className="relative flex flex-wrap justify-between   rounded-[14px]	 bg-[#577B7A]  border shadow-md flex-row h-full w-full">
         <div className="flex flex-col justify-between p-4 pl-7 leading-normal">
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-white dark:text-white">
            {Empty?(0):('120$')} 
@@ -19,8 +20,9 @@ export default function TotalCard() {
                 height={35}  alt="empty product"/>
    
         </div>
-      </div>
-      <div className="relative flex flex-wrap justify-between  w-[244px] h-[102px] rounded-[14px] m-1 my-3 	 bg-[#EE6363]  border shadow-md md:flex-row md:max-w-xl ">
+      </div></div>
+      <div className="sm:w-[50%]  lg:w-[25%]  w-full h-[112px] px-3  py-3 ">
+      <div className="relative flex flex-wrap justify-between  rounded-[14px]  	 bg-[#EE6363]  border shadow-md  flex-row   h-full w-full">
         <div className="flex flex-col justify-between p-4 pl-7 leading-normal">
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-white dark:text-white">
            {Empty?(0):('120$')} 
@@ -34,8 +36,8 @@ export default function TotalCard() {
                 height={35}  alt="empty product"/>
    
         </div>
-      </div>
-      <div className="relative flex flex-wrap justify-between  w-[244px] h-[102px] rounded-[14px] m-1 my-3 	 bg-[#F3D030]  border shadow-md md:flex-row md:max-w-xl ">
+      </div></div><div className="sm:w-[50%]  lg:w-[25%]  w-full h-[112px] px-3  py-3 ">
+      <div className="relative flex flex-wrap justify-between  rounded-[14px] bg-[#F3D030]  border shadow-md flex-row  h-full w-full ">
         <div className="flex flex-col justify-between p-4 pl-7 leading-normal">
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-white dark:text-white">
           {Empty?(0):('€ 2.3 K')} 
@@ -49,8 +51,8 @@ export default function TotalCard() {
                 height={35}  alt="empty product"/>
    
         </div>
-      </div>
-      <div className="relative   flex flex-wrap justify-between  w-[244px] h-[102px] rounded-[14px] m-1 my-3 	 bg-[#3D897A]  border shadow-md md:flex-row md:max-w-xl ">
+      </div></div><div className="sm:w-[50%]  lg:w-[25%]  w-full h-[112px] px-3  py-3 ">
+      <div className="relative   flex flex-wrap justify-between rounded-[14px]  	 bg-[#3D897A]  border shadow-md flex-row h-full w-full ">
         <div className="flex flex-col justify-between p-4 pl-7 leading-normal">
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-white dark:text-white">
             {Empty?(0):('120$')} 
@@ -65,7 +67,7 @@ export default function TotalCard() {
    
         </div>
       </div>
-             
+             </div>
     </div>
   );
 }

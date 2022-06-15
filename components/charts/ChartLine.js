@@ -88,7 +88,7 @@ export const data = {
 
 export default function ChartLine({empty}) {
   return (
-    <div className=" relative  p-4  md:basis-1/2 sm:basis-1 md:max-w-[512px]  rounded-[14px] my-2  h-[270px]	 bg-[#fff]  border shadow-md md:flex-row  ">
+    <div className=" relative    rounded-[14px] 	 bg-[#fff]  border shadow-md flex-row w-full h-auto  min-h-full	 p-4 ">
       <div className="text-xl w-auto absolute ">Sold Amounts</div>
       <div className="flex flex-wrap justify-between w-[1/4] ">
         {/* start dropdown */}
