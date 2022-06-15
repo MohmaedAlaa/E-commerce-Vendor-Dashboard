@@ -18,8 +18,3 @@ a {
 * {
   box-sizing: border-box;
 }
-
-.react-responsive-modal-modal{
-  border-radius: 10px;
-  overflow: hidden; 
-}

@@ -9,7 +9,7 @@ export const product = [
     product: "Polo Shirt",
     rate: "5",
     date: "23/5/2022-11:18 PM",
-    review: "Great shirt! The size is perfect , The color is better than",
+    review: "Great shirt! The size is perfect , The color is better than Great shirt! The size is perfect , The color is better than",
     description:'Lorem ipsum dolor sit amet,consectetur adipiscing elit.Vivamus aliquam elitaelementum commodo.Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Praesent eujusto quis mi dapibus fermentum.In posuere sollicitudin imperdiet.'
   },
   { 
@@ -17,7 +17,7 @@ export const product = [
     product: "Polo Shirt",
     rate: "3",
     date: "25/5/2022-11:18 PM",
-    review: "Great shirt! The size is perfect , The color is better than",
+    review: "Great shirt! The size is perfect , The color is better than Great shirt! The size is perfect , The color is better than",
     description:'Lorem ipsum dolor sit amet,consectetur adipiscing elit.Vivamus aliquam elitaelementum commodo.Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Praesent eujusto quis mi dapibus fermentum.In posuere sollicitudin imperdiet.'
   },
   // More product...
@@ -25,13 +25,6 @@ export const product = [
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
-}
-
-function isEmpty(object) {
-  for (const property in object) {
-    return false;
-  }
-  return true;
 }
 
 export default function products() {
@@ -56,9 +49,27 @@ export default function products() {
       arrow.current.classList.value == 'flex gap-2 items-center text-[#686868] cursor-pointer rotate-180 transition-[all-0.3s-0.1s-ease-in-out]'
       arrow.current.classList.remove('rotate-180')
     }
-
+    product= product.slice(0).reverse()
+    console.log(product)
   };
-
+  
+  const isEmpty = (object) => {
+    for (const property in object) {
+      return false;
+    }
+    return true;
+  }
+  // const isRevers = () => {
+  //   if(arrow.current.classList.value.includes('rotate-180')){
+  //     return true;
+  //     console.log(true);
+  //   }
+  //   return false;
+  //   console.log(falseZ)
+  // }
+  // useEffect(() => {
+  //  isRevers()
+  // }, []);
   return (
     <div className="px-4 sm:px-6 lg:px-8">
       <div className="sm:flex sm:items-center">
@@ -90,7 +101,7 @@ export default function products() {
       <div className="mt-8 flex flex-col"  style={{'box-shadow':'0px 10px 60px #DCDCDC8C'}}>
         <div className="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-            <div className="relative overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
+            <div className="relative overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg px-10 py-4">
               {
                 !isEmpty(product)?
                 <table className="min-w-full table-fixed divide-y divide-gray-300">
@@ -129,17 +140,14 @@ export default function products() {
                     </tr>
                   </thead>
                   <tbody className=" bg-white">
-                    {product.map((product) => (
+                    { 
+                     product.map((product) => (
+                      
                       <tr
                         key={product.email}
-                        // className={
-                          
-                        //   selectedproduct.includes(product)
-                        //     ? "bg-white"
-                        //     : undefined
-                        // }
-                        className="hover:bg-[#F2F4F7] duration-700"
+                        // className="hover:bg-[#F2F4F7] duration-700"
                       >
+                        {console.log(arrow)}
                         <td
                           className={classNames(
                             "whitespace-nowrap py-4 pr-3 px-6 sm:w-16 sm:px-8 text-gray-500",
@@ -147,7 +155,7 @@ export default function products() {
                           )}
                         >
                           <div className="flex flex-row space-x-1">
-                              <div style={{boxShadow: '0px 2px 6px #54566533' , borderRadius:'6px'}}>
+                              <div className="bg-white" style={{boxShadow: '0px 2px 6px #54566533' , borderRadius:'6px'}}>
                                   <img src="/Img - product 1@2x.png" width={42.5} height={42.5} alt="product" className="px-1"/>
                               </div>
                               <p className="mt-3 pl-2">{product.product}</p>
@@ -163,7 +171,7 @@ export default function products() {
                           {product.date}
                         </td>
                         <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                          <p  className='truncate w-80'>{product.review}</p>
+                          <p  className='truncate w-[400px]'>{product.review}</p>
                         </td>
                         <td className="whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                         <Link href={`/productReviews/${product.id}`}>

@@ -88,7 +88,7 @@ export default function Example() {
                     </div>
                     <div className="text-sm">
                         <a href="#" className="font-medium">
-                            Don't have an account? <span className="ml-1 text-base"> Creat Account</span>
+                            Don't have an account? <span className="ml-1 text-base"> Create Account</span>
                         </a>
                     </div>
                   </form>
