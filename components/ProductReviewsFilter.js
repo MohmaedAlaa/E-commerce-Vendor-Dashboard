@@ -15,7 +15,7 @@ export default function PopUp () {
     <div style={{'borderRadius':'10px'}}  className='popup'>
     <button onClick={onOpenModal} className="text-[#707082] text-[14px] px-2 py-1 flex row gap-2 mt-2">
       <div className='rotate-90'>
-        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" className='h-5 w-5'>
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" className='h-[20px] w-[20px]'>
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
         </svg>
       </div>

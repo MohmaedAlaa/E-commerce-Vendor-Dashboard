@@ -86,13 +86,13 @@ export default function products() {
           </div>
         </div>
 
-        <div className='mt-4 sm:mt-8  flex justify-between'>
+        <div className='mt-4 sm:mt-9  flex justify-between w-[20px]'>
           <div className='flex gap-2 items-center text-[#686868] cursor-pointer transition-[all-0.3s-0.1s-ease-in-out]' ref={arrow} onClick={()=>(onArrowClickDown())}>
             <ArrowUpwardIcon />
           </div>
         </div>
 
-        <div className="mt-4 sm:mt-8  flex justify-between">
+        <div className="mt-4 sm:mt-8 flex justify-between">
           <div className="flex gap-2 items-center">
             <PopUp />
           </div>
