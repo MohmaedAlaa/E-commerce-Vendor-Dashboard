@@ -1,6 +1,6 @@
 import {  useRef, useState, useEffect } from "react";
 import Link from 'next/link'
-import { MessagesList } from "/public/Data/MessagesListData";
+
 
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
@@ -11,7 +11,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function SupportTable() {
+export default function SupportTable({MessagesList}) {
   const checkbox = useRef();
   const [checked, setChecked] = useState(false);
   const [indeterminate, setIndeterminate] = useState(false);
@@ -163,7 +163,7 @@ export default function SupportTable() {
                 <div className="flex items-center">
                   <div className="ml-4">
                     <div className="font-medium text-gray-900">
-                    <Link href={`/message/${encodeURIComponent(Message.id)}`}>
+                    <Link href={`/message/${Message.id}`}>
 
                     <a> #{Message.id}</a>
                       </Link>

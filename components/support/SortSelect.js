@@ -16,7 +16,7 @@ function classNames(...classes) {
 
 export default function SortSelect() {
   const [selected, setSelected] = useState(people[3]);
-  console.log(selected);
+ 
   return (
     <Listbox value={selected} onChange={setSelected}>
       {({ open }) => (
