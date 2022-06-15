@@ -10,12 +10,12 @@ export default function SupportList() {
   return (
     <div className="supportList  w-full flex flex-col">
       <h1 className="font-medium	text-[24px] w-full">Messages ({MessagesList?.length})</h1>
-      <div className="flex flex-row justify-between mt-5">
+      <div className="flex flex-row flex-wrap justify-between mt-5">
         <div className="dropdown flex flex-row  align-middle justify-between w-[248px] ">
           <SortSelect />
         </div>
 
-        <div className="flex">
+        <div className="flex m-auto sm:m-0 mt-3">
          
           <button onClick={()=>setIsOpen(true)}
             type="button"
@@ -25,7 +25,7 @@ export default function SupportList() {
           </button>
         </div>
       </div>
-<div className="">
+<div className="table-auto ">
 
   <SupportTable MessagesList={MessagesList}/>
 </div>

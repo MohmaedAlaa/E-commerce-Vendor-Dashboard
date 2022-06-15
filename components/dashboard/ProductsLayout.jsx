@@ -22,7 +22,7 @@ export default function ProductsLayout() {
           )}
         </div>
         {products.length > 0 ? (
-          <div className=" overflow-x-auto  sm:rounded-lg mt-5  relative max-h-[450px] overflow-y-scroll scroll-bar">
+          <div className="   sm:rounded-lg mt-5  relative max-h-[450px] overflow-x-auto overflow-y-scroll scroll-bar">
             <table className="w-full text-sm text-left table-auto	 ">
               <thead className="sticky top-0 bg-white border-b ">
                 <tr className="text-xs     w-full ">
