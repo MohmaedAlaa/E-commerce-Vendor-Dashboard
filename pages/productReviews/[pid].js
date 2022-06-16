@@ -21,7 +21,7 @@ export default function View() {
             <p className="text-[#686868]">Reviews details</p>
         </div>
 
-        <div className="rounded-[14px] mt-5" style={{'box-shadow': '2px 2px 20px #8A97A940'}}>
+        <div className="rounded-[14px] mt-5 bg-white" style={{'box-shadow': '2px 2px 20px #8A97A940'}}>
             {product.filter((product)=> product.id == pid).map((product)=>(
               <div className="p-6">
               

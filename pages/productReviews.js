@@ -74,7 +74,7 @@ export default function products() {
     <div className="px-4 sm:px-6 lg:px-8">
       <div className="sm:flex sm:items-center">
         <div className="sm:flex-auto">
-          <h1 className="text-xl font-semibold text-gray-900">
+          <h1 className="text-xl text-gray-900">
             Product Reviews <span className="text-[#686868]">(42)</span>
           </h1>
         </div>
@@ -104,30 +104,30 @@ export default function products() {
             <div className="relative overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg px-10 py-4 bg-white">
               {
                 !isEmpty(product)?
-                <table className="min-w-full table-fixed divide-y divide-gray-300">
+                <table className="min-w-full table-fixed divide-[#CDCFDC] divide-y-[2px]">
                   <thead className="mx-2">
                     <tr>
                       <th
                         scope="col"
-                        className=" px-6 sm:w-16 sm:px-8 min-w-[12rem] py-3.5 pr-3 text-left text-sm font-semibold text-gray-500"
+                        className=" px-6 sm:w-16 sm:px-8 min-w-[12rem] py-3.5 pr-3 text-left text-sm text-[#686868]"
                       >
                         Product
                       </th>
                       <th
                         scope="col"
-                        className="px-3 py-3.5 text-left text-sm font-semibold text-gray-500"
+                        className="px-10 py-3.5 text-left text-sm text-[#686868]"
                       >
                         Rate
                       </th>
                       <th
                         scope="col"
-                        className="px-3 py-3.5 text-left text-sm font-semibold text-gray-500"
+                        className="px-10 py-3.5 text-left text-sm text-[#686868]"
                       >
                         Date
                       </th>
                       <th
                         scope="col"
-                        className="px-3 py-3.5 text-left text-sm font-semibold text-gray-500"
+                        className="px-10 py-3.5 text-left text-sm text-[#686868]"
                       >
                         Review
                       </th>
@@ -150,7 +150,7 @@ export default function products() {
                         {console.log(arrow)}
                         <td
                           className={classNames(
-                            "whitespace-nowrap py-4 pr-3 px-6 sm:w-16 sm:px-8 text-gray-500",
+                            "whitespace-nowrap py-4 pr-3 px-6 sm:w-16 sm:px-8 text-[#707082]",
                             selectedproduct.includes(product)
                           )}
                         >
@@ -162,15 +162,15 @@ export default function products() {
                           </div>
                           
                         </td>
-                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                        <td className="whitespace-nowrap px-10 py-4 text-sm text-[#707082]">
                             <div className="flex flex-row space-x-1">
                               <p>{product.rate}</p><img src="/golden star.svg" alt="golden star"/>
                             </div>
                         </td>
-                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                        <td className="whitespace-nowrap px-10 py-4 text-sm text-[#707082]">
                           {product.date}
                         </td>
-                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                        <td className="whitespace-nowrap px-10 py-4 text-sm text-[#707082]">
                           <p  className='truncate w-[400px]'>{product.review}</p>
                         </td>
                         <td className="whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">

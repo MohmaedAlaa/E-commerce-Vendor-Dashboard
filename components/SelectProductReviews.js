@@ -20,15 +20,15 @@ export default function SelectProductReviews() {
     <Listbox value={selected} onChange={setSelected}  style={{'box-shadow':'0px 10px 60px #DCDCDC8C'}}>
       {({ open }) => (
         <>
-          <Listbox.Label className="block text-sm font-medium text-gray-700">
+          <Listbox.Label className="block text-sm font-medium text-[#686868]">
             Sort by
           </Listbox.Label>
           <div className="mt-1 relative" style={{'box-shadow':'0px 10px 60px #DCDCDC8C'}}>
             <Listbox.Button className="bg-white relative w-full border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-[#CCE7E6] focus:border-[#CCE7E6] sm:text-sm">
-              <span className="block truncate w-[140px]">{selected.name}</span>
+              <span className="block truncate w-[140px] text-[#686868]">{selected.name}</span>
               <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
                 <SelectorIcon
-                  className="h-5 w-5 text-gray-400"
+                  className="h-5 w-5 text-[#686868]"
                   aria-hidden="true"
                 />
               </span>
@@ -47,7 +47,7 @@ export default function SelectProductReviews() {
                     key={person.id}
                     className={({ active }) =>
                       classNames(
-                        active ? "text-[#232323] bg-[#CCE7E6]" : "text-gray-900",
+                        active ? "text-[#232323] bg-[#CCE7E6]" : "text-[#686868]",
                         "cursor-default select-none w-48 relative py-2 pl-3 pr-9"
                       )
                     }

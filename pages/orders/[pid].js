@@ -23,20 +23,20 @@ export default function orderDetails() {
             <p className="text-[#686868]">order details</p>
         </div>
 
-        <div className="flex flex-row my-5 gap-x-2">
-            <div className="bg-[#EE6363] text-white rounded-[14px]  w-80 h-20 ">
+        <div className="flex flex-row my-5 gap-x-5">
+            <div className="bg-[#EE6363] text-white rounded-[14px] w-[400px] h-20 ">
                 <div className="px-7 flex flex-row relative mt-6">
                     <p className="mt-1">Subtotal</p>
                     <p className="absolute right-7 text-[20px]">$ 30.96</p>
                 </div>   
             </div>
-            <div className="bg-[#F3D030] text-white rounded-[14px]  w-80 h-20">
+            <div className="bg-[#F3D030] text-white rounded-[14px] w-[400px] h-20">
                 <div className="px-7 flex flex-row relative mt-6">
                     <p className="mt-1"> Shipping</p>
                     <p className="absolute right-7 text-[20px]">$ 00.00</p>
                 </div>   
             </div>
-            <div className="bg-[#3D897A] text-white rounded-[14px]  w-80 h-20">
+            <div className="bg-[#3D897A] text-white rounded-[14px] w-[400px] h-20">
                 <div className="px-7 flex flex-row relative mt-6">
                     <p className="mt-1">Total</p>
                     <p className="absolute right-7 text-[20px]">$ 30.96</p>
@@ -44,7 +44,7 @@ export default function orderDetails() {
             </div>
         </div>
         
-        <div className="rounded-[14px]" style={{'box-shadow': '2px 2px 20px #8A97A940'}}>
+        <div className="rounded-[14px] bg-white" style={{'box-shadow': '2px 2px 20px #8A97A940'}}>
             <div className="p-6">
                 {product.filter((product)=> product.id == pid).map((product)=>(
                     <div>
@@ -66,7 +66,7 @@ export default function orderDetails() {
                             </div>
                         </div>
 
-                    <hr className="border-l-2.5 h-28 border border-[#CDCFDC]"></hr>
+                    <hr className="border-l-2.5 h-28 border border-[#CDCFDC] mx-20"></hr>
 
                     <div>
                         <div  className="flex row relative gap-10 mb-5">
@@ -92,17 +92,17 @@ export default function orderDetails() {
             </div>
         </div>
 
-        <div className="rounded-[14px] mt-7 min-w-full divide-y divide-gray-300" style={{'box-shadow': '2px 2px 20px #8A97A940'}}>
+        <div className="rounded-[14px] mt-7 min-w-full divide-y divide-gray-300 bg-white" style={{'box-shadow': '2px 2px 20px #8A97A940'}}>
             <div className="p-6">
                 <h1 className="text-[20px]">Order Details</h1>
                 <hr className="mt-3 mb-2 border border-[#CDCFDC]"></hr>
-                <table className="min-w-full divide-y-[1.5px] divide-[#CDCFDC]" cellspacing="0" cellpadding="0" style={{'border':'none'}}>
+                <table className="min-w-full divide-y-[1.5px] divide-[#CDCFDC]" cellspacing="0" cellpadding="0">
 
                   <thead>
                     <tr>
                       <th
                         scope="col"
-                        className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-[#686868] sm:pl-6  "
+                        className="px-3 py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-[#686868] sm:pl-6  "
                       >
                         NO.
                       </th>
@@ -139,7 +139,7 @@ export default function orderDetails() {
                     </tr>
                   </thead>
                   
-                  <tbody className="divide-y divide-gray-200 bg-white">
+                  <tbody>
                     {product.filter((product)=> product.id == pid).map((product)=> (
                       <tr key={product.code}>
                         <td className="whitespace-nowrap px-3 py-4 text-sm">
@@ -162,7 +162,6 @@ export default function orderDetails() {
                         <td className="whitespace-nowrap px-3 py-4 text-sm text-[#232323]">
                           {product.amount}
                         </td>
-                        <hr className="my-3 border border-[#CDCFDC]"></hr>
                       </tr>
                     ))}
                   </tbody>

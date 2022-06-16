@@ -87,10 +87,10 @@ export default function products() {
               <div className="relative overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg px-10 py-4	bg-white">
               {
               !isEmpty(product)?
-              <table className="min-w-full table-fixed divide-y divide-gray-300">
+              <table className="min-w-full table-fixed divide-[#CDCFDC] divide-y-[2px]" style={{font: 'normal normal medium 14px/17px Urbanist'}}>
                 <thead>
                   <tr>
-                    <th
+                    <th 
                       scope="col"
                       className="relative w-12 px-6 sm:w-16 sm:px-8"
                     >
@@ -104,32 +104,32 @@ export default function products() {
                     </th>
                     <th
                       scope="col"
-                      className="px-3 py-3.5 text-left text-sm font-semibold text-gray-500"
+                      className="pl-3 pr-12 py-3.5 text-left text-sm text-[#686868]"
                     >
                       Order Code
                     </th>
                     <th
                       scope="col"
-                      className="px-3 py-3.5 text-left text-sm font-semibold text-gray-500 w-28"
+                      className="px-12 py-3.5 text-left text-sm text-[#686868] w-28"
                     >
                       {/* <p cal></p> */}
                       NO. of products
                     </th>
                     <th
                       scope="col"
-                      className="px-3 py-3.5 text-left text-sm font-semibold text-gray-500"
+                      className="px-12 py-3.5 text-left text-sm text-[#686868]"
                     >
                       Amount
                     </th>
                     <th
                       scope="col"
-                      className="px-3 py-3.5 text-left text-sm font-semibold text-gray-500"
+                      className="px-12 py-3.5 text-left text-sm text-[#686868]"
                     >
                       Tracking Info
                     </th>
                     <th
                       scope="col"
-                      className="px-3 py-3.5 text-left text-sm font-semibold text-gray-500"
+                      className="px-12 py-3.5 text-left text-sm text-[#686868]"
                     >
                     </th>
                     <th
@@ -168,23 +168,23 @@ export default function products() {
                           }
                         />
                       </td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500"
+                      <td className="whitespace-nowrap pl-3 pr-12 py-4 text-sm text-[#707082]"
                       >
                         <Link href={`/orders/${product.id}`}>
                           {product.code}
                         </Link>
                         <orderDetails product={product} />
                       </td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                      <td className="whitespace-nowrap px-12 py-4 text-sm text-[#707082]">
                         {product.no}
                       </td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                      <td className="whitespace-nowrap px-12 py-4 text-sm text-[#707082]">
                         {product.amount}
                       </td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                      <td className="whitespace-nowrap px-12 py-4 text-sm text-[#707082]">
                         <PopUp />
                       </td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                      <td className="whitespace-nowrap px-12 py-4 text-sm text-[#707082]">
                         <button className="border border-5 px-2 py-1 rounded-[8px]"><SimCardDownloadOutlinedIcon className="w-5" /> Download Invoice</button>
                       </td>
                     </tr>
