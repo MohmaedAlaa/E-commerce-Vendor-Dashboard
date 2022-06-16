@@ -5,14 +5,14 @@ export default function Example() {
         <div className="min-h-full flex w-full">
             <div className="hidden lg:block relative flex-1 w-1/2">
                 <img
-                className="absolute inset-0 h-full w-full object-cover"
+                className="inset-0 h-full w-full object-cover"
                 src="/Layer 2.svg"
                 alt=""
                 />
             </div>
 
-          <div className="flex-1 flex flex-col justify-center py-12 pb-[298px] px-4 sm:px-6 lg:flex-none lg:px-20 xl:px-24 w-1/2">
-            <div className="text-[#707082] font-medium ml-72 w-full">
+          <div className="relative flex-1 flex flex-col justify-center py-12 pb-[298px] px-4 sm:px-6 lg:flex-none lg:px-20 xl:px-24 w-1/2">
+            <div className="absolute text-[#707082] font-medium top-24 right-24 w-full w-1/5">
                 <a href="#">
                    <LanguageIcon className='mb-1'/> Deutsch
                 </a>

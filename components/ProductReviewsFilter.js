@@ -3,6 +3,7 @@ import 'react-responsive-modal/styles.css';
 import { Dialog, Transition } from '@headlessui/react'
 import { ExclamationIcon, XIcon } from '@heroicons/react/outline'
 import CalendarTodayOutlinedIcon from '@mui/icons-material/CalendarTodayOutlined';
+import Calendar from './CalenderInput.tsx';
 
 export default function PopUp () {
 
@@ -59,27 +60,25 @@ export default function PopUp () {
                   </button>
                 </div>
                 <div className="sm:flex sm:items-start">
-                  <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                  <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left min-h-[375px] h-auto">
                     <Dialog.Title as="h3" className="text-lg leading-6 font-medium text-gray-900 border-b-[2px]">
                     <h1 className='text-[24px] mb-5'>Filter</h1>
                     </Dialog.Title>
 
-                    <div className='py-3 w-[750px] content-center	'>
+                    <div className='py-3 w-[750px] content-center'>
                       <h1 className='text-[16px] mt-3 '>Date Range</h1>
                       <div className='flex row'>
-                        <div class="w-full md:w-1/2 pr-5 mb-6 md:mb-0 my-5 flex row relative">
+                        <div class="w-full pr-5 mb-6 md:mb-0 my-5 flex row relative">
                           <label class="block tracking-wide text-[#707082] text-[16px] mr-2 mt-3 " for="tracking-id">
                             from
                           </label>
-                          <CalendarTodayOutlinedIcon className='pointer-events-none w-8 h-8 absolute left-[310px] top-2 text-[#707082]'/>
-                          <input class="appearance-none block w-full bg-[#F9F9F9] text-[#232323]border border-[#D4D4D4] rounded-[10px] py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-[#D4D4D4] focus:ring-[#3D897A]" maxlength="25" id="tracking-id" type="text" placeholder="dd/mm/yy"/>
+                          <Calendar/>
                         </div>
-                        <div class="w-full md:w-1/2 mb-6 md:mb-0 my-5 flex row relative">
+                        <div class="w-full mb-6 md:mb-0 my-5 ml-10 flex row relative">
                           <label class="block tracking-wide text-[#707082] text-[16px] mr-2 mt-3" for="tracking-carrier">
                             to
                           </label>
-                          <CalendarTodayOutlinedIcon className='pointer-events-none w-8 h-8 absolute left-[330px] top-2 text-[#707082]'/>
-                          <input class="appearance-none block w-full bg-[#F9F9F9] text-[#232323]border border-[#D4D4D4] rounded-[10px] py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-[#D4D4D4] focus:ring-[#3D897A]" maxlength="25" id="tracking-carrier" type="text" placeholder="dd/mm/yy"/>
+                          <Calendar/>
                         </div>
                       </div>
                       <div>

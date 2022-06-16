@@ -3,6 +3,7 @@ import 'react-responsive-modal/styles.css';
 import { Dialog, Transition } from '@headlessui/react'
 import { ExclamationIcon, XIcon } from '@heroicons/react/outline'
 import CalendarTodayOutlinedIcon from '@mui/icons-material/CalendarTodayOutlined';
+import Calendar from './CalenderInput.tsx';
 
 export default function PopUp () {
 
@@ -73,28 +74,28 @@ export default function PopUp () {
                     <h1 className='text-[24px] mb-5'>Filter</h1>
                     </Dialog.Title>
 
-                    <div className='py-3  w-[750px] content-center	'>
+                    <div className='py-3 w-[750px] content-center h-[450px]'>
                     <h1 className='text-[16px] mt-3'>Commission Range</h1>
                     <div className='flex row'>
-                      <div class="w-full md:w-1/2 pr-5 mb-6 md:mb-0 my-5 flex row relative">
-                        <label class="block tracking-wide text-[#707082] text-[16px] mr-2 mt-3 " for="tracking-id">
+                      <div class="w-full md:w-1/2 mb-6 md:mb-0 my-5 flex row relative pr-2">
+                        <label class="block tracking-wide text-[#707082] text-[16px] mr-2 mt-3 w-[30px]" for="tracking-id">
                           min
                         </label>
                         <div>
-                            <div className='border-l-[1px] border-[#D4D4D4] absolute text-[#707082] left-[250px] h-[45px]'></div>
-                            <div className=' absolute text-[#707082] left-[280px] top-3 h-9'>EUR</div>
+                            <div className='border-l-[1px] border-[#D4D4D4] absolute text-[#707082] left-[270px] h-[45px]'></div>
+                            <div className=' absolute text-[#707082] left-[300px] top-3 h-9'>EUR</div>
                         </div>
-                        <input class="appearance-none block w-full bg-[#F9F9F9] text-[#232323]border border-[#D4D4D4] rounded-[10px] py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-[#D4D4D4] focus:ring-[#3D897A]" maxlength="20" id="tracking-id" type="text" placeholder="0"/>
+                        <input class="appearance-none block w-full bg-[#F9F9F9] text-[#232323]border border-[#D4D4D4] rounded-[10px] py-3 px-4 mb-3 ml-1 leading-tight focus:outline-none focus:bg-white focus:border-[#D4D4D4] focus:ring-[#3D897A]" maxlength="20" id="tracking-id" type="text" placeholder="0"/>
                       </div>
-                      <div class="w-full md:w-1/2 mb-6 md:mb-0 my-5 flex row relative">
-                        <label class="block tracking-wide text-[#707082] text-[16px] mr-2 mt-3" for="tracking2-id">
+                      <div class="w-full md:w-1/2 mb-6 md:mb-0 my-5 flex row relative pl-2">
+                        <label class="block tracking-wide text-[#707082] text-[16px] mr-2 mt-3 w-[30px]" for="tracking2-id">
                           max
                         </label>
                         <div>
-                            <div className='border-l-[1px] border-[#D4D4D4] absolute text-[#707082] left-[275px] h-[45px]'></div>
-                            <div className=' absolute text-[#707082] left-[305px] top-3 h-9'>EUR</div>
+                            <div className='border-l-[1px] border-[#D4D4D4] absolute text-[#707082] left-[295px] h-[45px]'></div>
+                            <div className=' absolute text-[#707082] left-[325px] top-3 h-9'>EUR</div>
                         </div>
-                        <input class="appearance-none block w-full bg-[#F9F9F9] text-[#232323]border border-[#D4D4D4] rounded-[10px] py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-[#D4D4D4] focus:ring-[#3D897A]" maxlength="20" id="tracking2-id" type="text" placeholder="0"/>
+                        <input class="appearance-none block w-full bg-[#F9F9F9] text-[#232323]border border-[#D4D4D4] rounded-[10px] py-3 px-4 mb-3 ml-1 leading-tight focus:outline-none focus:bg-white focus:border-[#D4D4D4] focus:ring-[#3D897A]" maxlength="20" id="tracking2-id" type="text" placeholder="0"/>
                       </div>
                     </div>
                     <h1 className='text-[16px] mt-5'>Date Range</h1>
@@ -103,19 +104,16 @@ export default function PopUp () {
                         <label class="block tracking-wide text-[#707082] text-[16px] mr-2 mt-3 " for="tracking3-id">
                           from
                         </label>
-                        <CalendarTodayOutlinedIcon className='pointer-events-none w-8 h-8 absolute left-[310px] top-2 text-[#707082]'/>
-                        <input class="appearance-none block w-full bg-[#F9F9F9] text-[#232323]border border-[#D4D4D4] rounded-[10px] py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-[#D4D4D4] focus:ring-[#3D897A]" maxlength="25" id="tracking3-id" type="text" placeholder="dd/mm/yy"/>
-                      </div>
-                      <div class="w-full md:w-1/2 mb-6 md:mb-0 my-5 flex row relative">
-                        <label class="block tracking-wide text-[#707082] text-[16px] mr-2 mt-3" for="tracking4-id">
+                        <Calendar/>                      </div>
+                      <div class="w-full md:w-1/2 mb-6 md:mb-0 my-5 flex row relative pl-4">
+                        <label class="block tracking-wide text-[#707082] text-[16px] mr-5 mt-3" for="tracking4-id">
                           to
                         </label>
-                        <CalendarTodayOutlinedIcon className='pointer-events-none w-8 h-8 absolute left-[330px] top-2 text-[#707082]'/>
-                        <input class="appearance-none block w-full bg-[#F9F9F9] text-[#232323]border border-[#D4D4D4] rounded-[10px] py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-[#D4D4D4] focus:ring-[#3D897A]" maxlength="25" id="tracking4-id" type="text" placeholder="dd/mm/yy"/>
+                        <Calendar/>
                       </div>
                     </div>
                     <div>
-                        <h1 className='my-5 text-[16px]'>Payment Status</h1>
+                        <h1 className='my-1 text-[16px]'>Payment Status</h1>
                         <div  class="flex row">
                             <div class="form-check pr-10">
                                 <input class="form-check-input text-[#3D897A] appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-[#3D897A] checked:border-[#3D897A] focus:outline-none focus:ring-[#3D897A] transition  mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="flexRadioDefault" id="flexRadioDefault1"/>

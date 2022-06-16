@@ -42,8 +42,7 @@ const navigation = [
   { name: "Orders", href: "/orders", icon: checklist  , current: false },
   { name: "Product Reviews", href: "/productReviews", icon: StarBorderIcon, current: false },
   { name: "Commission History", href: "/commissionHistory", icon: restore, current: false },
-  { name: "Support", href: "/support", icon: SupportIcon
-  , current: false },
+  { name: "Support", href: "/support", icon: SupportIcon, current: false },
 ];
 
 const userNavigation = [
