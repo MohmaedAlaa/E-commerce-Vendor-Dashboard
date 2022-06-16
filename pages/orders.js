@@ -87,7 +87,7 @@ export default function products() {
               <div className="relative overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg px-10 py-4	bg-white">
               {
               !isEmpty(product)?
-              <table className="min-w-full table-fixed divide-[#CDCFDC] divide-y-[2px]" style={{font: 'normal normal medium 14px/17px Urbanist'}}>
+              <table className="min-w-full table-fixed divide-y-[2px]" style={{font: 'normal normal medium 14px/17px Urbanist'}}>
                 <thead>
                   <tr>
                     <th 

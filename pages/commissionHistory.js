@@ -72,7 +72,7 @@ const product = [
               <div className="overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg  px-10 py-4 bg-white">
                 {
                   !isEmpty(product)?
-                  <table className="min-w-full divide-[#CDCFDC] divide-y-[2px]" cellspacing="0" cellpadding="0">
+                  <table className="min-w-full divide-y-[2px]" cellspacing="0" cellpadding="0">
                   <thead>
                     <tr>
                       <th
