@@ -4,21 +4,21 @@ import PopUp from "../components/commissionHistoryFilter";
 import SimCardDownloadOutlinedIcon from '@mui/icons-material/SimCardDownloadOutlined';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 
-const product = [
-    {
-      code: "#015545df",
-      mytreetyCommission: "$ 30",
-      paymentDate: "23/5/2022-11:18 PM",
-      PaymentState: "paid",
-    },
-    {
-      code: "#015545df",
-      mytreetyCommission: "$ 30",
-      paymentDate: "23/5/2022-11:18 PM",
-      PaymentState: "pending",
-    },
-    // More product...
-  ];
+// const product = [
+//     {
+//       code: "#015545df",
+//       mytreetyCommission: "$ 30",
+//       paymentDate: "23/5/2022-11:18 PM",
+//       PaymentState: "paid",
+//     },
+//     {
+//       code: "#015545df",
+//       mytreetyCommission: "$ 30",
+//       paymentDate: "23/5/2022-11:18 PM",
+//       PaymentState: "pending",
+//     },
+//     // More product...
+// ];
 
   function isEmpty(object) {
     for (const property in object) {
@@ -27,6 +27,7 @@ const product = [
     return true;
   }
   export default function Example() {
+    
     const arrow = useRef();
     const onArrowClickDown = () => {
     
@@ -39,6 +40,23 @@ const product = [
       }
   
     };
+
+    const [product, setProduct] = useState([
+      {
+        code: "#015545df",
+        mytreetyCommission: "$ 30",
+        paymentDate: "23/5/2022-11:18 PM",
+        PaymentState: "paid",
+      },
+      {
+        code: "#015545df",
+        mytreetyCommission: "$ 30",
+        paymentDate: "23/5/2022-11:18 PM",
+        PaymentState: "pending",
+      },
+      // More product...
+    ]
+    );
 
     return (
       <div className="px-4 sm:px-6 lg:px-8">
@@ -141,7 +159,7 @@ const product = [
                   </tbody>
                   </table>
                   :
-                  <div className="lg:block relative flex-1 w-full bg-white px-[330px] py-24 w-full">
+                  <div className="lg:block relative flex-1 w-full bg-white px-[435px] py-24 w-full">
                   <img
                   className="object-cover"
                   src="/Commission history.svg"
@@ -154,6 +172,26 @@ const product = [
             </div>
           </div>
         </div>
+        <div className="flex row gap-5">
+      
+      <button onClick={() => setProduct([])}>empty</button>
+      <button onClick={() => setProduct( [
+        {
+          code: "#015545df",
+          mytreetyCommission: "$ 30",
+          paymentDate: "23/5/2022-11:18 PM",
+          PaymentState: "paid",
+        },
+        {
+          code: "#015545df",
+          mytreetyCommission: "$ 30",
+          paymentDate: "23/5/2022-11:18 PM",
+          PaymentState: "pending",
+        },
+      ]
+        )}>fill</button>
+
+    </div>
       </div>
     );
   }

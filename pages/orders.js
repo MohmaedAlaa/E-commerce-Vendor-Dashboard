@@ -5,42 +5,76 @@ import Example from "../components/OrdersDropDown";
 import PopUp from "../components/OrdersPopUp";
 import SimCardDownloadOutlinedIcon from '@mui/icons-material/SimCardDownloadOutlined';
 
-export const product = [
-  { id:'1',
-    code: "#123234ggd",
-    no: "1",
-    amount: "$ 30",
-    ShippingAddress:'Röpkestraße 35,Düsseldorf,40235,Germany',
-    orderDate:"23/5/2022-11:18 PM",
-    orderStatus:'pending',
-    paymentMethod:'Paypal',
-    variation:'XL.Blue',
-    SKU:'XLpoloshirt001',
-    quantity:'1',
-    status:'pending'
-  },
-  { 
-    id:'2',
-    code: "#878654gd",
-    no: "2",
-    amount: "$ 50",
-    ShippingAddress:'Röpkestraße 35,Düsseldorf,40235,Germany',
-    orderDate:"23/5/2022-11:18 PM",
-    orderStatus:'pending',
-    paymentMethod:'Paypal',
-    variation:'XL.Blue',
-    SKU:'XLpoloshirt001',
-    quantity:'1',
-    status:'pending'
-},
-  // More product...
-];
+
+// const product = [
+//   { id:'1',
+//   code: "#123234ggd",
+//   no: "1",
+//   amount: "$ 30",
+//   ShippingAddress:'Röpkestraße 35,Düsseldorf,40235,Germany',
+//   orderDate:"23/5/2022-11:18 PM",
+//   orderStatus:'pending',
+//   paymentMethod:'Paypal',
+//   variation:'XL.Blue',
+//   SKU:'XLpoloshirt001',
+//   quantity:'1',
+//   status:'pending'
+// },
+// { 
+//   id:'2',
+//   code: "#878654gd",
+//   no: "2",
+//   amount: "$ 50",
+//   ShippingAddress:'Röpkestraße 35,Düsseldorf,40235,Germany',
+//   orderDate:"23/5/2022-11:18 PM",
+//   orderStatus:'pending',
+//   paymentMethod:'Paypal',
+//   variation:'XL.Blue',
+//   SKU:'XLpoloshirt001',
+//   quantity:'1',
+//   status:'pending'
+// },
+// ]
+  
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 export default function products() {
+
+  const [product, setProduct] = useState([
+    { id:'1',
+      code: "#123234ggd",
+      no: "1",
+      amount: "$ 30",
+      ShippingAddress:'Röpkestraße 35,Düsseldorf,40235,Germany',
+      orderDate:"23/5/2022-11:18 PM",
+      orderStatus:'pending',
+      paymentMethod:'Paypal',
+      variation:'XL.Blue',
+      SKU:'XLpoloshirt001',
+      quantity:'1',
+      status:'pending'
+    },
+    { 
+      id:'2',
+      code: "#878654gd",
+      no: "2",
+      amount: "$ 50",
+      ShippingAddress:'Röpkestraße 35,Düsseldorf,40235,Germany',
+      orderDate:"23/5/2022-11:18 PM",
+      orderStatus:'pending',
+      paymentMethod:'Paypal',
+      variation:'XL.Blue',
+      SKU:'XLpoloshirt001',
+      quantity:'1',
+      status:'pending'
+  },
+    // More product...
+  ]
+  );
+
   const checkbox = useRef();
   const [checked, setChecked] = useState(false);
   const [indeterminate, setIndeterminate] = useState(false);
@@ -192,18 +226,54 @@ export default function products() {
                 </tbody>
               </table>
               :
-              <div className="lg:block relative flex-1 w-full bg-white px-72 py-24 w-full">
+              <div className="lg:block relative flex-1 w-full h-full bg-white px-[375px] py-24">
                 <img
                 className="object-cover"
                 src="/Orders.svg"
                 alt=""
                 />
-                <p className='ml-20 mt-5 text-[18px]'>No orders yet!</p>
+                <p className='ml-24 mt-5 text-[18px]'>No orders yet!</p>
               </div>
               }
             </div>
           </div>
         </div>
+      </div>
+      <div className="flex row gap-5">
+      
+        <button onClick={() => setProduct([])}>empty</button>
+        <button onClick={() => setProduct( [
+          {
+            id:'1',
+            code: "#123234ggd",
+            no: "1",
+            amount: "$ 30",
+            ShippingAddress:'Röpkestraße 35,Düsseldorf,40235,Germany',
+            orderDate:"23/5/2022-11:18 PM",
+            orderStatus:'pending',
+            paymentMethod:'Paypal',
+            variation:'XL.Blue',
+            SKU:'XLpoloshirt001',
+            quantity:'1',
+            status:'pending'
+          },
+          { 
+            id:'2',
+            code: "#878654gd",
+            no: "2",
+            amount: "$ 50",
+            ShippingAddress:'Röpkestraße 35,Düsseldorf,40235,Germany',
+            orderDate:"23/5/2022-11:18 PM",
+            orderStatus:'pending',
+            paymentMethod:'Paypal',
+            variation:'XL.Blue',
+            SKU:'XLpoloshirt001',
+            quantity:'1',
+            status:'pending'
+          },
+        ]
+          )}>fill</button>
+
       </div>
     </div>
   );

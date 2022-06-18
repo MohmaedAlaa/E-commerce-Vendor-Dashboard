@@ -4,24 +4,24 @@ import PopUp from "../components/ProductReviewsFilter";
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import Link from 'next/link'
 
-export const product = [
-  { id : '1',
-    product: "Polo Shirt",
-    rate: "5",
-    date: "23/5/2022-11:18 PM",
-    review: "Great shirt! The size is perfect , The color is better than Great shirt! The size is perfect , The color is better than",
-    description:'Lorem ipsum dolor sit amet,consectetur adipiscing elit.Vivamus aliquam elitaelementum commodo.Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Praesent eujusto quis mi dapibus fermentum.In posuere sollicitudin imperdiet.'
-  },
-  { 
-    id : '2',
-    product: "Polo Shirt",
-    rate: "3",
-    date: "25/5/2022-11:18 PM",
-    review: "Great shirt! The size is perfect , The color is better than Great shirt! The size is perfect , The color is better than",
-    description:'Lorem ipsum dolor sit amet,consectetur adipiscing elit.Vivamus aliquam elitaelementum commodo.Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Praesent eujusto quis mi dapibus fermentum.In posuere sollicitudin imperdiet.'
-  },
-  // More product...
-];
+// export const product = [
+  // { id : '1',
+  //   product: "Polo Shirt",
+  //   rate: "5",
+  //   date: "23/5/2022-11:18 PM",
+  //   review: "Great shirt! The size is perfect , The color is better than Great shirt! The size is perfect , The color is better than",
+  //   description:'Lorem ipsum dolor sit amet,consectetur adipiscing elit.Vivamus aliquam elitaelementum commodo.Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Praesent eujusto quis mi dapibus fermentum.In posuere sollicitudin imperdiet.'
+  // },
+  // { 
+  //   id : '2',
+  //   product: "Polo Shirt",
+  //   rate: "3",
+  //   date: "25/5/2022-11:18 PM",
+  //   review: "Great shirt! The size is perfect , The color is better than Great shirt! The size is perfect , The color is better than",
+  //   description:'Lorem ipsum dolor sit amet,consectetur adipiscing elit.Vivamus aliquam elitaelementum commodo.Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Praesent eujusto quis mi dapibus fermentum.In posuere sollicitudin imperdiet.'
+  // },
+//   // More product...
+// ];
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -53,8 +53,9 @@ export default function products() {
     console.log(product)
   };
   
-  const isEmpty = (object) => {
-    for (const property in object) {
+  const isEmpty = (object) =>{
+  
+  for (const property in object) {
       return false;
     }
     return true;
@@ -70,6 +71,27 @@ export default function products() {
   // useEffect(() => {
   //  isRevers()
   // }, []);
+  
+  const [product, setProduct] = useState([
+    { id : '1',
+    product: "Polo Shirt",
+    rate: "5",
+    date: "23/5/2022-11:18 PM",
+    review: "Great shirt! The size is perfect , The color is better than Great shirt! The size is perfect , The color is better than",
+    description:'Lorem ipsum dolor sit amet,consectetur adipiscing elit.Vivamus aliquam elitaelementum commodo.Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Praesent eujusto quis mi dapibus fermentum.In posuere sollicitudin imperdiet.'
+    },
+    { 
+      id : '2',
+      product: "Polo Shirt",
+      rate: "3",
+      date: "25/5/2022-11:18 PM",
+      review: "Great shirt! The size is perfect , The color is better than Great shirt! The size is perfect , The color is better than",
+      description:'Lorem ipsum dolor sit amet,consectetur adipiscing elit.Vivamus aliquam elitaelementum commodo.Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Praesent eujusto quis mi dapibus fermentum.In posuere sollicitudin imperdiet.'
+    },
+    // More product...
+  ]
+  );
+
   return (
     <div className="px-4 sm:px-6 lg:px-8">
       <div className="sm:flex sm:items-center">
@@ -183,7 +205,7 @@ export default function products() {
                   </tbody>
                 </table>
                 :
-                <div className="lg:block relative flex-1 w-full bg-white px-[325.2px] py-24 w-full">
+                <div className="lg:block relative flex-1 w-full bg-white px-[425px] py-24 w-full">
                   <img
                   className="object-cover"
                   src="/Reviews.svg"
@@ -196,6 +218,29 @@ export default function products() {
           </div>
         </div>
       </div>
+      <div className="flex row gap-5">
+      
+      <button onClick={() => setProduct([])}>empty</button>
+      <button onClick={() => setProduct( [
+         { id : '1',
+         product: "Polo Shirt",
+         rate: "5",
+         date: "23/5/2022-11:18 PM",
+         review: "Great shirt! The size is perfect , The color is better than Great shirt! The size is perfect , The color is better than",
+         description:'Lorem ipsum dolor sit amet,consectetur adipiscing elit.Vivamus aliquam elitaelementum commodo.Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Praesent eujusto quis mi dapibus fermentum.In posuere sollicitudin imperdiet.'
+         },
+         { 
+           id : '2',
+           product: "Polo Shirt",
+           rate: "3",
+           date: "25/5/2022-11:18 PM",
+           review: "Great shirt! The size is perfect , The color is better than Great shirt! The size is perfect , The color is better than",
+           description:'Lorem ipsum dolor sit amet,consectetur adipiscing elit.Vivamus aliquam elitaelementum commodo.Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Praesent eujusto quis mi dapibus fermentum.In posuere sollicitudin imperdiet.'
+         },
+      ]
+        )}>fill</button>
+
+    </div>
     </div>
   );
 }
